@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Model
 {
 
-    public class Hint
+    public class ItemHint
     {
         private string hint;
         private Item item;

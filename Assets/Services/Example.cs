@@ -22,7 +22,7 @@ public class Example : MonoBehaviour
     {
         //Output this to console when Button1 or Button3 is clicked
         Debug.Log("You have clicked the button!");
-        service.login("admin", "escape.room");
+        service.register2(new Model.User("testUnity","test@email.com","test"));
     }
 
     void TaskWithParameters(string message)

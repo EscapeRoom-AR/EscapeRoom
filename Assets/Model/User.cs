@@ -27,6 +27,13 @@ namespace Model
         public string Image { get => image; set => image = value; }
         public string Password { get => password; set => password = value; }
         public string Description { get => description; set => description = value; }
+
+        public User(string username, string email, string password)
+        {
+            Username = username;
+            Email = email;
+            Password = password;
+        }
     }
 
 }

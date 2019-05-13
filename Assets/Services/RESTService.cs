@@ -4,19 +4,25 @@ using UnityEngine;
 using System.Net;
 using System;
 using System.IO;
+using System.Text;
+using System.Net.Http;
 using Model;
+using System.Threading.Tasks;
+using UnityEngine.Networking;
 
 namespace Services
 {
     public class RESTService : MonoBehaviour
     {
+        private static readonly HttpClient client = new HttpClient();
+
         private static string HOST = "http://stucom.flx.cat/alu/dam2t02";
         private static string LOGIN = HOST + "/login";
-        private static string REGISTER = "/register";
-        private static string USER = "/user";
-        private static string ROOMS = "/room";
-        private static string ROOM = "/room";
-        private static string RANKING = "/ranking";
+        private static string REGISTER = HOST + "/register";
+        private static string USER = HOST + "/user";
+        private static string ROOMS = HOST + "/room";
+        private static string ROOM = HOST + "/room";
+        private static string RANKING = HOST + "/ranking";
 
         private string token;
 
@@ -30,8 +36,52 @@ namespace Services
             string jsonResponse = reader.ReadToEnd();
             APIResponse<string> apiResponse = JsonUtility.FromJson<APIResponse<string>>(jsonResponse);
             Debug.Log(jsonResponse);
-            Debug.Log("DATA:" +apiResponse.Data);
+            Debug.Log("DATA:" + apiResponse.Data);
             return apiResponse;
         }
+
+        public APIResponse<string> register(User user)
+        {
+            Debug.Log("register");
+            HttpWebRequest request = this.post(REGISTER, user);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string jsonResponse = reader.ReadToEnd();
+            APIResponse<string> apiResponse = JsonUtility.FromJson<APIResponse<string>>(jsonResponse);
+            Debug.Log(jsonResponse);
+            Debug.Log("DATA:" + apiResponse.Data);
+            return apiResponse;
+        }
+
+        public HttpWebRequest post(string url, object data)
+        {
+            Debug.Log("post");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            Stream reqStream = request.GetRequestStream();
+            string json = JsonUtility.ToJson(data);
+            byte[] byteArray = Encoding.UTF8.GetBytes(json);
+            reqStream.Write(byteArray, 0, byteArray.Length);
+            reqStream.Close();
+            return request;
+        }
+
+        public void register2(User user)
+        {
+            Debug.Log("register2");
+            StringContent content = new StringContent((JsonUtility.ToJson(user)), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = client.PostAsync(REGISTER, content).Result;
+            string responseString = response.Content.ReadAsStringAsync().Result;
+            Debug.Log(responseString);
+        }
+
+        public async Task Register3(User user)
+        {
+            UnityWebRequest request = UnityWebRequest.Post(REGISTER, JsonUtility.ToJson(user));
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SendWebRequest().completed.value += Debug.Log("de");
+        }
+
     }
 }

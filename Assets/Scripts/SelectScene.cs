@@ -7,8 +7,15 @@ public class SelectScene : MonoBehaviour
 {
     void Update()
     {
+         void loadScene(string sceneName)
+        {
+            Debug.Log("algo");
+            SceneManager.LoadScene(sceneName);
+        }
+
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
+            Debug.Log("touch detected");
             Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit raycastHit;
             if (Physics.Raycast(raycast, out raycastHit))
@@ -16,7 +23,7 @@ public class SelectScene : MonoBehaviour
                 Debug.Log("Something Hit");
                 if (raycastHit.collider.name == "AboutUsButton")
                 {
-                    SceneManager.LoadScene("6.AboutUsScene");
+                    loadScene("6.AboutUsScene");
                 }
 
                 if (raycastHit.collider.CompareTag("SoccerTag"))
@@ -27,6 +34,8 @@ public class SelectScene : MonoBehaviour
         }
     }
 }
+
+
 /*void Update()
     {
 

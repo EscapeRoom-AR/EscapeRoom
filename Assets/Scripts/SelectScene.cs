@@ -7,27 +7,51 @@ public class SelectScene : MonoBehaviour
 {
     void Update()
     {
-        
+        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+        {
+            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit raycastHit;
+            if (Physics.Raycast(raycast, out raycastHit))
+            {
+                Debug.Log("Something Hit");
+                if (raycastHit.collider.name == "AboutUsButton")
+                {
+                    SceneManager.LoadScene("6.AboutUsScene");
+                }
+
+                if (raycastHit.collider.CompareTag("SoccerTag"))
+                {
+                    Debug.Log("Soccer Ball clicked");
+                }
+            }
+        }
+    }
+}
+/*void Update()
+    {
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began) { Debug.Log("TOUCH  " + touch.position); }
-          //  selectScene(touch);
-            } }
-            
+            //  selectScene(touch);
+        }
+    }
 
-            public void selectScene(Touch t){ 
-            Debug.Log(this.gameObject.name);
 
-                switch (this.gameObject.name)
-            {
+    public void selectScene(Touch t)
+    {
+        Debug.Log(this.gameObject.name);
+
+        switch (this.gameObject.name)
+        {
             case "AboutUsButton":
                 SceneManager.LoadScene("6.AboutUsScene");
                 break;
 
-                case "RankingButton":
-                    SceneManager.LoadScene("9.RankingScene");
-                    break;
+            case "RankingButton":
+                SceneManager.LoadScene("9.RankingScene");
+                break;
 
             case "Back":
                 SceneManager.LoadScene("4.MainScreen");
@@ -43,5 +67,5 @@ public class SelectScene : MonoBehaviour
 
         }
     }
-   
-    }
+}
+    */

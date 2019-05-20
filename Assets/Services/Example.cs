@@ -10,7 +10,7 @@ public class Example : MonoBehaviour
 {
     //Make sure to attach these Buttons in the Inspector
     public Button m_YourFirstButton;
-    private REST2 service = new REST2();
+   // private REST2 service = new REST2();
 
     void Start()
     {

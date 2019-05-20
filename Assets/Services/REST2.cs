@@ -45,11 +45,26 @@ public class REST2 : MonoBehaviour
 
     public void register(User user)
     {
-        RestClient.Post<APIResponse>(REGISTER, user)
-            .Then((resp) => Debug.Log(JsonUtility.ToJson(resp, true)))
-            .Catch((err) => Debug.Log("err" + err.Message));
+        string json = JsonUtility.ToJson(user);
+        Debug.Log(json);
+        // RestClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
 
-        RestClient.Get<APIResponse>(LOGIN)
-            .Then((resp) => Debug.Log("login" + JsonUtility.ToJson(resp)));
+        //RestClient.Post<APIResponse>(REGISTER, json)
+        //    .Then(resp => Debug.Log("resp:" +resp.message))
+        //    .Catch(err => Debug.Log("err:" +err.Message));
+
+        RestClient.Request(new RequestHelper
+        {
+            Uri = REGISTER,
+            Method = "POST",
+            Timeout = 30,
+            Headers = new Dictionary<string, string>
+    {
+        { "Content-Type","application/json" }
+    },
+            Body = json
+        }).Then(resp => Debug.Log("resp:" + resp.Text)).Catch(err => Debug.Log(err.Message));
     }
+
+
 }

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SelectScene : MonoBehaviour
-   
+
 {
     void Update()
     {
+        
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-
-            selectScene(touch);
+            if (touch.phase == TouchPhase.Began) { Debug.Log("TOUCH  " + touch.position); }
+          //  selectScene(touch);
             } }
             
 
@@ -23,9 +24,11 @@ public class SelectScene : MonoBehaviour
             case "AboutUsButton":
                 SceneManager.LoadScene("6.AboutUsScene");
                 break;
+
                 case "RankingButton":
                     SceneManager.LoadScene("9.RankingScene");
                     break;
+
             case "Back":
                 SceneManager.LoadScene("4.MainScreen");
                 break;
@@ -33,10 +36,12 @@ public class SelectScene : MonoBehaviour
             case "ProfileButton":
                 SceneManager.LoadScene("ProfileScreen");
                 break;
+
             case "PlayButton":
                 SceneManager.LoadScene("7.PlayScene");
                 break;
 
         }
     }
-}
+   
+    }

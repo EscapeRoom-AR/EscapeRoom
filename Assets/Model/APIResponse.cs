@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Model
 {
-    public class APIResponse<T>
+    public class APIResponse
     {
-        private int code;
-        private string message;
-        private T data;
+        private int _code;
+        private string _message;
+       // private T data;
 
-        public int Code { get => code; set => code = value; }
-        public string Message { get => message; set => message = value; }
-        public T Data { get => data; set => data = value; }
+        public int code { get => _code; set => _code = value; }
+        public string message { get => _message; set => _message = value; }
+      //  public T Data { get => data; set => data = value; }
     }
 }

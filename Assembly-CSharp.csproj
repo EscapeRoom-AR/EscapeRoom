@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{B45C4E5B-492C-6211-FC05-16E16C472AC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -67,10 +66,110 @@
     <Compile Include="Assets\Model\ItemHint.cs" />
     <Compile Include="Assets\Model\Room.cs" />
     <Compile Include="Assets\Model\User.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\RestClient.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\RestClientPromise.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\Extensions.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\HttpBase.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\JsonHelper.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\RequestException.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\RequestHelper.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\ResponseHelper.cs" />
+    <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Utils\StaticCoroutine.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\EnumerableExt.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\Exceptions\PromiseException.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\Exceptions\PromiseStateException.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\Promise.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\Promise_NonGeneric.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\PromiseHelpers.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\PromiseTimer.cs" />
+    <Compile Include="Assets\RestClient\Packages\RSG.Promise\Tuple.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Services\Example.cs" />
     <Compile Include="Assets\Services\REST2.cs" />
     <Compile Include="Assets\Services\RESTService.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Databases\UIItemDatabase.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Databases\UISpellDatabase.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Databases\UITalentDatabase.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Demo\Demo_LoadScene.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Demo\UILevelFrame.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Demo\UIStatsAdd.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Effects\Gradient.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Effects\LetterSpacing.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Effects\NicerOutline.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Effects\SoftMaskScript.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\AnimationTriggersExtended.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\ColorBlockExtended.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\SpriteStateExtended.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UIEquipmentType.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UIItemInfo.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UIItemSlot_Group.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UISpellInfo.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UISpellInfo_Flags.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UISpellSlot_Group.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UITalentInfo.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UITooltipLines.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Enums, Structs and Serializables\UIWindowID.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UIEquipReceiver.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UIEquipSlot.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UIItemSlot.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UIItemSlotOverlay.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UISlotBase.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UISlotCooldown.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UISpellSlot.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Icon Slots System\UITalentSlot.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\BitMaskAttribute.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\BreakPrefabConnection.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\CommonColorBuffer.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\IconNameing.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\NameAppendIndex.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\UIMirrorDimensions.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\UITextSetValue.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\UIToggleWindowAndTab.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Miscellaneous\UIUtility.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Raycast Filters\UICircularRaycastFilter.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Raycast Filters\UIIgnoreRaycast.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Raycast Filters\UIMaskRaycastFilter.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Raycast Filters\UIRectangularRaycastFilter.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_FadeInOut.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_Fill.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UIEquipSlot_Assign.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UIItemSlot_Assign.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UIProgressBar.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UISlotBase_Assign.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UISpellSlot_Assign.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Test Scripts\Test_UITalentSlot_Assign.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\ColorTween.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\FloatTween.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\ITweenValue.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\TweenEasing.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\TweenEasingHandler.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\TweenRunner.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\Vector2Tween.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\Tweening\Vector3Tween.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\IUIProgressBar.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\Select Field\UISelectField.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\Select Field\UISelectField_Arrow.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\Select Field\UISelectField_Label.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\Select Field\UISelectField_List.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\Select Field\UISelectField_Option.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIBlackOverlay.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIButtonExtended.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIButtonExtended_Target.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIDragObject.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIFlippable.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIHighlightTransition.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIJoystick.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UILoadingBar.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIPagination.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIProgressBar.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UISliderExtended.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UITab.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIToggle_OnOff.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UITooltip.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIWindow.cs" />
+    <Compile Include="Assets\Warforge Mobile UI\Scripts\UI\UIWindowManager.cs" />
+    <None Include="Assets\Warforge Mobile UI\Readme.txt" />
+    <None Include="Assets\Warforge Mobile UI\Changelog.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/alexc/Desktop/Scape/Escp/UI App/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -650,10 +749,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="Assets\Packages\Proyecto26.RestClient.2.5.6\lib\net35\Proyecto26.RestClient.dll" />
-    <Analyzer Include="Assets\Packages\RSG.Promise.3.0.1\lib\net35\RSG.Promise.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

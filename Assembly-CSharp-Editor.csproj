@@ -364,15 +364,6 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/alexc/Desktop/Scape/Escp/UI App/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="RSG.Promise">
-      <HintPath>C:/Users/alexc/Desktop/Scape/Escp/UI App/Assets/Packages/RSG.Promise.3.0.1/lib/netstandard2.0/RSG.Promise.dll</HintPath>
-    </Reference>
-    <Reference Include="Proyecto26.RestClient">
-      <HintPath>C:/Users/alexc/Desktop/Scape/Escp/UI App/Assets/Packages/Proyecto26.RestClient.2.5.6/lib/net35/Proyecto26.RestClient.dll</HintPath>
-    </Reference>
-    <Reference Include="RSG.Promise">
-      <HintPath>C:/Users/alexc/Desktop/Scape/Escp/UI App/Assets/Packages/RSG.Promise.3.0.1/lib/net35/RSG.Promise.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
     </Reference>

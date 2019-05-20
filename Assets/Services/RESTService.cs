@@ -12,6 +12,7 @@ using UnityEngine.Networking;
 
 namespace Services
 {
+    /*
     public class RESTService : ScriptableObject
     {
         private static readonly HttpClient client = new HttpClient();
@@ -100,4 +101,5 @@ namespace Services
         }
 
     }
+    */
 }

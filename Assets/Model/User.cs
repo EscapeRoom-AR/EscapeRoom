@@ -5,34 +5,24 @@ using UnityEngine;
 
 namespace Model
 {
-
+    [Serializable]
     public class User
     {
-        private DateTime createdAt;
-        private DateTime deletedAt;
-        private int code;
-        private string username;
-        private string email;
-        private bool premium;
-        private string image;
-        private string password;
-        private string description;
-
-        public DateTime CreatedAt { get => createdAt; set => createdAt = value; }
-        public DateTime DeletedAt { get => deletedAt; set => deletedAt = value; }
-        public int Code { get => code; set => code = value; }
-        public string Username { get => username; set => username = value; }
-        public string Email { get => email; set => email = value; }
-        public bool Premium { get => premium; set => premium = value; }
-        public string Image { get => image; set => image = value; }
-        public string Password { get => password; set => password = value; }
-        public string Description { get => description; set => description = value; }
+        public DateTime createdAt;
+        public DateTime deletedAt;
+        public int code;
+        public string username;
+        public string email;
+        public bool premium;
+        public string image;
+        public string password;
+        public string description;
 
         public User(string username, string email, string password)
         {
-            Username = username;
-            Email = email;
-            Password = password;
+            this.username = username;
+            this.email = email;
+            this.password = password;
         }
     }
 

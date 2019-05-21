@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 228123027}
   - component: {fileID: 228123026}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: RegisterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 648413191}
   - component: {fileID: 648413190}
   m_Layer: 5
-  m_Name: Text (4)
+  m_Name: UsernameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 885426402}
   - component: {fileID: 885426401}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: LoginButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,7 +1976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315957053}
   m_Layer: 5
-  m_Name: Action Button
+  m_Name: AcceptButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 1539376400}
   - component: {fileID: 1539376399}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: PasswordText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

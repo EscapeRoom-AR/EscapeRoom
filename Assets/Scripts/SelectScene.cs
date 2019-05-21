@@ -7,6 +7,13 @@ public class SelectScene : MonoBehaviour
 {
     void Update()
     {
+
+        GameObject[] aboutUs;
+
+        aboutUs = GameObject.FindGameObjectsWithTag("AboutUsButton");
+
+        Debug.Log(Input.touchCount);
+        if (Input.GetButtonDown("AboutUsButton")){ loadScene("6.AboutUsScene"); }
          void loadScene(string sceneName)
         {
             Debug.Log("algo");
@@ -26,9 +33,9 @@ public class SelectScene : MonoBehaviour
                     loadScene("6.AboutUsScene");
                 }
 
-                if (raycastHit.collider.CompareTag("SoccerTag"))
+                if (raycastHit.collider.CompareTag("AboutUsButton"))
                 {
-                    Debug.Log("Soccer Ball clicked");
+                    loadScene("6.AboutUsScene");
                 }
             }
         }

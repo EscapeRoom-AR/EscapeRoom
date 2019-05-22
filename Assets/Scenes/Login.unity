@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 175943552}
   - component: {fileID: 175943555}
   - component: {fileID: 175943554}
+  - component: {fileID: 175943556}
   m_Layer: 0
   m_Name: SelectScene
   m_TagString: Untagged
@@ -342,6 +343,22 @@ MonoBehaviour:
   restService: {fileID: 175943554}
   usernameField: {fileID: 256402015}
   passwordField: {fileID: 1873033347}
+--- !u!114 &175943556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175943551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a003757785ac7b4b86f2cbb188bcdc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 442818789}
+  modalPrefab: {fileID: 7770127141117862457, guid: 14a87196e5c7d3149916596274d88855,
+    type: 3}
+  modal: {fileID: 0}
 --- !u!1 &193764262
 GameObject:
   m_ObjectHideFlags: 0

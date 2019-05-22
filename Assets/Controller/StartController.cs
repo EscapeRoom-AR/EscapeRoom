@@ -17,6 +17,7 @@ public class StartController : MonoBehaviour
     {
         print(Time.time);
         yield return new WaitForSeconds(3);
+        print(nameScene);
         SceneManager.LoadScene(nameScene);
     }
 

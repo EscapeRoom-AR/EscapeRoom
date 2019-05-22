@@ -11,5 +11,10 @@ namespace Model
         public int code;
         public string message;
         public T data;
+
+        public bool IsError()
+        {
+            return code == 0;
+        }
     }
 }

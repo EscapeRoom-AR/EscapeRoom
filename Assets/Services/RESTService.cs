@@ -22,18 +22,18 @@ namespace Services
         private static string ROOM = HOST + "/room";
         private static string RANKING = HOST + "/ranking";
 
-        private string token;
+        private TokenHolder token;
 
-        public APIResponse<string> login(string username, string password)
+        public APIResponse<TokenHolder> login(string username, string password)
         {
             Debug.Log("login");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(LOGIN + "?username={0}&password={1}", username, password));
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string jsonResponse = reader.ReadToEnd();
-            APIResponse<string> apiResponse = JsonUtility.FromJson<APIResponse<string>>(jsonResponse);
+            APIResponse<TokenHolder> apiResponse = JsonUtility.FromJson<APIResponse<TokenHolder>>(jsonResponse);
             Debug.Log(jsonResponse);
-            Debug.Log("DATA:" + apiResponse.data);
+            Debug.Log("DATA:" + apiResponse.data.token);
             return apiResponse;
         }
 
@@ -57,5 +57,10 @@ namespace Services
             }
         }
 
+        [Serializable]
+        public class TokenHolder
+        {
+            public string token;
+        }
     }
 }

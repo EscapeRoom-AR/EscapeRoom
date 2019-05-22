@@ -24,7 +24,7 @@ namespace Services
 
         private TokenHolder token;
 
-        public APIResponse<TokenHolder> login(string username, string password)
+        public APIResponse<TokenHolder> Login(string username, string password)
         {
             Debug.Log("login");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(LOGIN + "?username={0}&password={1}", username, password));
@@ -40,6 +40,26 @@ namespace Services
         public void Register(User user)
         {
             StartCoroutine(Upload(user));
+        }
+
+        public void Test()
+        {
+            GetUser();
+        }
+
+        // Gets logged user information
+        public APIResponse<User> GetUser()
+        {
+            Debug.Log("login");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(USER);
+            request.Headers.Add("Authorization", token.token);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string jsonResponse = reader.ReadToEnd();
+            APIResponse<User> apiResponse = JsonUtility.FromJson<APIResponse<User>>(jsonResponse);
+            Debug.Log(jsonResponse);
+            Debug.Log("DATA:" + apiResponse.data.username);
+            return apiResponse;
         }
 
         IEnumerator Upload(User user)

@@ -23,7 +23,7 @@ public class AuthController : MonoBehaviour
     {
         print("username: " + usernameField.text);
         print("password: " + passwordField.text);
-        APIResponse<RESTService.TokenHolder> apiResponse =  restService.login(usernameField.text, passwordField.text);
+        APIResponse<RESTService.TokenHolder> apiResponse =  restService.Login(usernameField.text, passwordField.text);
         if (apiResponse.IsError())
         {
             modalService.showModal(apiResponse.message);

@@ -52,12 +52,13 @@ namespace Services
         {
             Debug.Log("login");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(USER);
-            request.Headers.Add("Authorization", token.token);
+            request.Headers[HttpRequestHeader.Authorization] = PlayerPrefs.GetString("token");
+            print(request.Headers);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string jsonResponse = reader.ReadToEnd();
+            print(jsonResponse);
             APIResponse<User> apiResponse = JsonUtility.FromJson<APIResponse<User>>(jsonResponse);
-            Debug.Log(jsonResponse);
             Debug.Log("DATA:" + apiResponse.data.username);
             return apiResponse;
         }

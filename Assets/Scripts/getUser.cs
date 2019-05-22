@@ -5,10 +5,10 @@ using Services;
 
 public class getUser : MonoBehaviour
 {
-    public RESTService restService;
+    private RESTService restService = new RESTService();
     // Start is called before the first frame update
     void Start()
     {
-        restService.
+        restService.GetUser();
     }
 }

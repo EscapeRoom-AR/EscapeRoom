@@ -9,26 +9,21 @@ namespace Services
     {
         public Canvas canvas;
         public GameObject modalPrefab;
-        public GameObject modal;
-
-        void Start()
-        {
-            showModal("test");
-        }
+        private GameObject modal;
 
         public void showModal(string text)
         {
-            //Text messageObject = GameObject.Find("Message").GetComponent<Text>();
-            //messageObject.text = text;
-            print("show modal");
-            modal = Instantiate(modalPrefab, new Vector3(Screen.width / 2, Screen.height /2, 0), Quaternion.identity);
+            modal = Instantiate(modalPrefab, new Vector3(0,0,0), Quaternion.identity);
+            Text messageObject = GameObject.Find("Message").GetComponent<Text>();
+            messageObject.text = text;
             modal.transform.SetParent(canvas.transform,false);
-
+            modal.name = "ErrorModal";
         }
 
         public void hideModal()
         {
-            Destroy(modal);
+            print("hide modal");
+            Destroy(GameObject.Find("ErrorModal"));
         }
     }
 }

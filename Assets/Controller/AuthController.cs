@@ -10,7 +10,7 @@ using UnityEditor;
 public class AuthController : MonoBehaviour
 {
     public RESTService restService;
-    //public 
+    public ModalService modalService;
     public InputField usernameField;
     public InputField passwordField;
 
@@ -26,7 +26,7 @@ public class AuthController : MonoBehaviour
         APIResponse<RESTService.TokenHolder> apiResponse =  restService.login(usernameField.text, passwordField.text);
         if (apiResponse.IsError())
         {
-          //  EditorUtility.DisplayDialog(title: "Error", message: apiResponse.message, ok: "Try again");
+            modalService.showModal(apiResponse.message);
             print("error: " + apiResponse.message);
         }
         else

@@ -25,7 +25,7 @@ public class AuthController : MonoBehaviour
         APIResponse<RESTService.TokenHolder> apiResponse =  restService.login(usernameField.text, passwordField.text);
         if (apiResponse.IsError())
         {
-            EditorUtility.DisplayDialog(title: "Error", message: apiResponse.message, ok: "Try again");
+          //  EditorUtility.DisplayDialog(title: "Error", message: apiResponse.message, ok: "Try again");
             print("error: " + apiResponse.message);
         }
         else

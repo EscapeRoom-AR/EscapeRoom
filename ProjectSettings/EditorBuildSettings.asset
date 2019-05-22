@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/ChangePassword.unity
     guid: 50646714b5fb119439c9e228626b1c71
   - enabled: 1
-    path: Assets/Scenes/AboutUsScene.unity
+    path: Assets/Scenes/AboutUs.unity
     guid: f80be786ce6ef284284e211a6f13f37a
   - enabled: 1
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/PlaySelection.unity
     guid: 12e7f4822fa4d1f488255252200bd7a2
   - enabled: 1
     path: Assets/Scenes/RankingSelection.unity

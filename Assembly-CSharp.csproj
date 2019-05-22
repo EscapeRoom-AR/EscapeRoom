@@ -63,6 +63,7 @@
     <Compile Include="Assets\Model\ItemHint.cs" />
     <Compile Include="Assets\Model\Room.cs" />
     <Compile Include="Assets\Model\User.cs" />
+    <Compile Include="Assets\Scripts\ModalService.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Services\RESTService.cs" />
     <Compile Include="Assets\Warforge Mobile UI\Scripts\Databases\UIItemDatabase.cs" />

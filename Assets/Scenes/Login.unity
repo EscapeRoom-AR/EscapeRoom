@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restService: {fileID: 175943554}
+  modalService: {fileID: 175943556}
   usernameField: {fileID: 256402015}
   passwordField: {fileID: 1873033347}
 --- !u!114 &175943556
@@ -358,7 +359,6 @@ MonoBehaviour:
   canvas: {fileID: 442818789}
   modalPrefab: {fileID: 7770127141117862457, guid: 14a87196e5c7d3149916596274d88855,
     type: 3}
-  modal: {fileID: 0}
 --- !u!1 &193764262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,9 +2563,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0006149064, y: 0}
   m_SizeDelta: {x: 1920, y: 1320}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &1848938476
 MonoBehaviour:
   m_ObjectHideFlags: 0

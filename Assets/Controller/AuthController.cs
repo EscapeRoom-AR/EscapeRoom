@@ -58,6 +58,12 @@ public class AuthController : MonoBehaviour
         }
     }
 
+    public void Logout()
+    {
+        PlayerPrefs.DeleteKey("token");
+        SceneManager.LoadScene("Login");
+    }
+
     private void Authenticated(string token)
     {
         PlayerPrefs.SetString("token", token);

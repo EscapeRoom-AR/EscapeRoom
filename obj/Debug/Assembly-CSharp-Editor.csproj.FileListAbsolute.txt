@@ -227,7 +227,6 @@ C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Boo.Lang.Useful.dll
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Unity.CecilTools.dll
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\UnityEngine.xml
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\UnityEditor.xml
 C:\Users\alexc\Desktop\Scape\HelloDarkness\Temp\bin\Debug\Unity.TextMeshPro.Editor.pdb

@@ -241,6 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283c2ba26ec85f442a2f0f144382f297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restService: {fileID: 0}
+  modalService: {fileID: 0}
+  usernameField: {fileID: 0}
+  passwordField: {fileID: 0}
+  passwordRepeatField: {fileID: 0}
+  emailField: {fileID: 0}
 --- !u!114 &192982909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,9 +499,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5eb96c2cf870a9349997383cb4d8e885, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 956a5925fb8f31b48a2e06bf84951aad, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -268,8 +268,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5178331014318224701}
   m_TextComponent: {fileID: 5178331015024649498}
   m_Placeholder: {fileID: 5178331014752065240}
-  m_ContentType: 7
-  m_InputType: 2
+  m_ContentType: 0
+  m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: Username
 --- !u!1 &5178331014773236608
 GameObject:
   m_ObjectHideFlags: 0

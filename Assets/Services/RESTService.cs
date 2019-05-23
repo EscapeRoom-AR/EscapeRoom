@@ -67,7 +67,6 @@ namespace Services
             UnityWebRequest www = new UnityWebRequest(URI, method);
             www.downloadHandler = new DownloadHandlerBuffer();
             www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
-            print("Request");
             yield return www.SendWebRequest();
 
             APIResponse<T> apiResponse;
@@ -75,7 +74,6 @@ namespace Services
                 apiResponse = new APIResponse<T>(0, www.error);
             else
                 apiResponse = JsonUtility.FromJson<APIResponse<T>>(www.downloadHandler.text);
-            print("RESPONSE: " +www.downloadHandler.text);
             callBack(apiResponse);
         }
 
@@ -93,11 +91,26 @@ namespace Services
         }
 
         public delegate void ResponseCallback<T>(APIResponse<T> apiResponse);
+        public delegate void ImageCallBack(Sprite sprite);
 
         [Serializable]
         public class TokenHolder
         {
             public string token;
+        }
+
+        public void GetImage(string url, ImageCallBack callBack)
+        {
+            StartCoroutine(Image(url, callBack));
+        }
+
+        IEnumerator Image(string url, ImageCallBack callback)
+        {
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+            yield return www.SendWebRequest();
+            while (!www.downloadHandler.isDone) { }
+            Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture as Texture2D;
+            callback(Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f));
         }
     }
 }

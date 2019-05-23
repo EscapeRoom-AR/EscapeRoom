@@ -22,8 +22,6 @@ namespace Services
         private static string ROOM = HOST + "/room";
         private static string RANKING = HOST + "/ranking";
 
-        private TokenHolder token;
-
         public APIResponse<TokenHolder> Login(string username, string password)
         {
             Debug.Log("login");
@@ -37,9 +35,9 @@ namespace Services
             return apiResponse;
         }
 
-        public void Register(User user)
+        public void Register(User user, ResponseCallback<TokenHolder> listener)
         {
-            StartCoroutine(Upload(user));
+            StartCoroutine(Upload(user, listener));
         }
 
         public void Test()
@@ -63,21 +61,21 @@ namespace Services
             return apiResponse;
         }
 
-        IEnumerator Upload(User user)
+        IEnumerator Upload(User user, ResponseCallback<TokenHolder> callBack)
         {
             UnityWebRequest www = UnityWebRequest.Post(REGISTER + "?username=" + user.username + "&email=" + user.email + "&password=" + user.password, "");
             yield return www.SendWebRequest();
 
+            APIResponse<TokenHolder> apiResponse;
             if (www.isNetworkError || www.isHttpError)
-            {
-                Debug.Log(www.error);
-            }
+                apiResponse = new APIResponse<TokenHolder>(0,www.error);
             else
-            {
-                Debug.Log("Form upload complete!" + (www.downloadHandler.text));
-            }
+                apiResponse = JsonUtility.FromJson<APIResponse<TokenHolder>>(www.downloadHandler.text);
+            callBack(apiResponse);
         }
 
+        public delegate void ResponseCallback<T>(APIResponse<T> apiResponse);
+        
         [Serializable]
         public class TokenHolder
         {

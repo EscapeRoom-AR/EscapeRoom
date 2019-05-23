@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Services;
 using UnityEngine.SceneManagement;
 using Model;
-using UnityEditor;
+using System.Text.RegularExpressions;
 
 public class AuthController : MonoBehaviour
 {
@@ -13,6 +11,9 @@ public class AuthController : MonoBehaviour
     public ModalService modalService;
     public InputField usernameField;
     public InputField passwordField;
+    public InputField passwordRepeatField;
+    public InputField emailField;
+    private Regex emailRegex = new Regex(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$");
 
     public bool IsAuthenticated()
     {
@@ -21,18 +22,47 @@ public class AuthController : MonoBehaviour
 
     public void Login()
     {
-        print("username: " + usernameField.text);
-        print("password: " + passwordField.text);
-        APIResponse<RESTService.TokenHolder> apiResponse =  restService.Login(usernameField.text, passwordField.text);
-        if (apiResponse.IsError())
-        {
-            modalService.showModal(apiResponse.message);
-            print("error: " + apiResponse.message);
-        }
-        else
-        {
-            PlayerPrefs.SetString("token", apiResponse.data.token);
-            SceneManager.LoadScene("Main");
+        if (usernameField.text == "" || passwordField.text == "")
+            modalService.ShowModal("All fields are required");
+        else if (passwordField.text.Length < 8)
+            modalService.ShowModal("Password must be at least 8 characters long.");
+        else {
+            APIResponse<RESTService.TokenHolder> apiResponse = restService.Login(usernameField.text, passwordField.text);
+            if (apiResponse.IsError())
+                modalService.ShowModal(apiResponse.message);
+            else
+                Authenticated(apiResponse.data.token);
         }
     }
+
+    public void Register()
+    {
+        if (emailField.text == "" || usernameField.text == "" || passwordField.text == "" || passwordRepeatField.text == "")
+            modalService.ShowModal("All fields are required");
+        else if (!emailRegex.Match(emailField.text).Success)
+            modalService.ShowModal("Invalid email");
+        else if (passwordField.text.Length < 8)
+            modalService.ShowModal("Password must be at least 8 characters long.");
+        else if (passwordRepeatField.text != passwordField.text)
+            modalService.ShowModal("Passwords don't match.");
+        else
+        {
+            User user = new User(usernameField.text, emailField.text, passwordField.text);
+            restService.Register(user, apiResponse =>
+            {
+                if (apiResponse.IsError())
+                    modalService.ShowModal(apiResponse.message);
+                else
+                    Authenticated(apiResponse.data.token);
+            });
+        }
+    }
+
+    private void Authenticated(string token)
+    {
+        PlayerPrefs.SetString("token", token);
+        SceneManager.LoadScene("Main");
+    }
 }
+
+

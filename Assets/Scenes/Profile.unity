@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0050964, y: 0}
-  m_SizeDelta: {x: 2193.4, y: 1320}
+  m_AnchoredPosition: {x: 0.000038146973, y: 0}
+  m_SizeDelta: {x: 2556, y: 1320}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &499613166
 MonoBehaviour:
@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authController: {fileID: 1150958905}
+  restService: {fileID: 1150958904}
   windowLoggedPrefab: {fileID: 5178331015287599277, guid: 5ec82fab7631c894186aa320647cc5c0,
     type: 3}
   windowUnLoggedPrefab: {fileID: 7198427612459486482, guid: d572f102bd4d56246b4cc067236e0880,

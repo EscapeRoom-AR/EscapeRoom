@@ -568,3 +568,5 @@ C:\Users\alexc\Desktop\Scape\HelloDarkness\obj\Debug\Assembly-CSharp.csproj.Core
 C:\Users\alexc\Desktop\Scape\HelloDarkness\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\alexc\Desktop\Scape\HelloDarkness\obj\Debug\Assembly-CSharp.dll
 C:\Users\alexc\Desktop\Scape\HelloDarkness\obj\Debug\Assembly-CSharp.pdb
+C:\Users\alex\Desktop\HelloDarkness\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
+C:\Users\alex\Desktop\HelloDarkness\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml

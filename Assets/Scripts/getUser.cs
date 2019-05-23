@@ -5,10 +5,14 @@ using Services;
 
 public class getUser : MonoBehaviour
 {
-    private RESTService restService = new RESTService();
+    public RESTService restService;
     // Start is called before the first frame update
     void Start()
     {
-        restService.GetUser();
+        restService.GetUser((response) =>
+        {
+            print(response.message);
+            print(JsonUtility.ToJson(response.data));
+        });
     }
 }

@@ -296,6 +296,8 @@ MonoBehaviour:
     type: 3}
   windowUnLoggedPrefab: {fileID: 7198427612459486482, guid: d572f102bd4d56246b4cc067236e0880,
     type: 3}
+  modalPickSourcePrefab: {fileID: 2960204115311513772, guid: 4b144ba90900a7d40a5c6ed9a3b7ceff,
+    type: 3}
   canvas: {fileID: 1474551775}
 --- !u!1 &1186032007
 GameObject:

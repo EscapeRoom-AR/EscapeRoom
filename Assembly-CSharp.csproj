@@ -64,6 +64,7 @@
     <Compile Include="Assets\Model\Room.cs" />
     <Compile Include="Assets\Model\User.cs" />
     <Compile Include="Assets\Scripts\getUser.cs" />
+    <Compile Include="Assets\Scripts\ProfileImage.cs" />
     <Compile Include="Assets\Scripts\ProfileStart.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Services\ModalService.cs" />
@@ -719,6 +720,12 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E668C125-6587-755D-713A-2AB5F4A0CD3E}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,7 +11,10 @@ public class ProfileStart : MonoBehaviour
     public RESTService restService;
     public GameObject windowLoggedPrefab;
     public GameObject windowUnLoggedPrefab;
+    public GameObject modalPickSourcePrefab;
     public Canvas canvas;
+    private bool isModalActive;
+
 
     void Start()
     {
@@ -32,13 +35,26 @@ public class ProfileStart : MonoBehaviour
             User user = apiResponse.data;
             window.transform.Find("Content").Find("EmailField").GetComponent<InputField>().text = user.Email;
             window.transform.Find("Content").Find("UsernameField").GetComponent<InputField>().text = user.Username;
-            if (user.Image != "") {
-                restService.GetImage(user.Image, sprite => {
-                    Image image = window.transform.Find("Content").Find("ImageButton").Find("Icon").GetComponent<Image>();
-                    image.sprite = sprite;
-                });
-            }
+            Button imageButton = window.transform.Find("Content").Find("ImageButton").GetComponent<Button>();
+            Image image = imageButton.gameObject.transform.Find("Icon").GetComponent<Image>();
+            imageButton.onClick.AddListener(() => SelectProfileImage(image));
+            if (user.Image != "")
+                restService.GetImage(user.Image, sprite => image.sprite = sprite);
         });
+    }
+
+    private void SelectProfileImage(Image image)
+    {
+        if (isModalActive)
+            return;
+        isModalActive = true;
+        GameObject modal = Instantiate(modalPickSourcePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        modal.transform.Find("SceneController").GetComponent<ProfileImage>().image = image;
+        modal.transform.Find("RemoveButton").Find("ActionButton").GetComponent<Button>().onClick.AddListener(() => {
+            isModalActive = false;
+            Destroy(modal);
+        });
+        modal.transform.SetParent(canvas.transform, false);
     }
 
 

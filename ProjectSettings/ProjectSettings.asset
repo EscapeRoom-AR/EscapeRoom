@@ -718,10 +718,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 92e622f9-c0c1-4a97-a158-6afc71ce4585
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: HelloDarkness
+  organizationId: unity_5alexbouoliete
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

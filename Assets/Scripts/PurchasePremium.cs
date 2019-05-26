@@ -9,6 +9,8 @@ public class PurchasePremium : MonoBehaviour
     public void BuyComplete(Product product)
     {
         print("Premium bought");
+
+
     }
 
     public void BuyFailed(Product product, PurchaseFailureReason failureReason)

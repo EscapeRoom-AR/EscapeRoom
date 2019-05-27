@@ -36,7 +36,7 @@ public class ProfileStart : MonoBehaviour
             window.transform.Find("Content").Find("EmailField").GetComponent<InputField>().text = user.Email;
             window.transform.Find("Content").Find("UsernameField").GetComponent<InputField>().text = user.Username;
             Button imageButton = window.transform.Find("Content").Find("ImageButton").GetComponent<Button>();
-            Image image = imageButton.gameObject.transform.Find("Icon").GetComponent<Image>();
+            Image image = imageButton.gameObject.transform.Find("Mask").Find("Icon").GetComponent<Image>();
             imageButton.onClick.AddListener(() => SelectProfileImage(image));
             if (user.Image != "")
                 restService.GetImage(user.Image, sprite => image.sprite = sprite);
@@ -49,7 +49,9 @@ public class ProfileStart : MonoBehaviour
             return;
         isModalActive = true;
         GameObject modal = Instantiate(modalPickSourcePrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        modal.transform.Find("SceneController").GetComponent<ProfileImage>().image = image;
+        ProfileImage profileImage = modal.transform.Find("SceneController").GetComponent<ProfileImage>();
+        profileImage.image = image;
+        profileImage.modal = modal;
         modal.transform.Find("RemoveButton").Find("ActionButton").GetComponent<Button>().onClick.AddListener(() => {
             isModalActive = false;
             Destroy(modal);

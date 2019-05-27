@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ProfileImage : MonoBehaviour
 {
     public Image image;
+    public GameObject modal;
 
     public void TakePicture()
     {
@@ -30,6 +31,7 @@ public class ProfileImage : MonoBehaviour
             Texture2D texture = NativeGallery.LoadImageAtPath(path, 512);
             if (texture == null)
                 return;
+            Destroy(modal);
             image.sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
         }, "Select a PNG image", "image/png", 512);
     }

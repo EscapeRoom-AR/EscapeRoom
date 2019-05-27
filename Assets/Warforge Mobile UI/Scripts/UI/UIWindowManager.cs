@@ -7,6 +7,7 @@ namespace DuloGames.UI
 	
 		protected virtual void Update()
 		{
+            /*
 			// Check for escape key press
 			if (Input.GetKeyUp(KeyCode.Escape))
 			{
@@ -46,8 +47,7 @@ namespace DuloGames.UI
 							window.Show();
 						}
 					}
-				}
+				}*/
 			}
 		}
 	}
-}

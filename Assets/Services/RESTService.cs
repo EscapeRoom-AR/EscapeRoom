@@ -31,6 +31,7 @@ namespace Services
         private static readonly string ROOM = HOST + "/room";
         private static readonly string RANKING = HOST + "/ranking";
         private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
+        private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
 
         public void Login(User user, ResponseCallback<TokenHolder> listener)
         {
@@ -62,6 +63,11 @@ namespace Services
             StartCoroutine(Request(String.Format(PASSWORD, oldPassword, password), "PUT", listener));
         }
 
+        public void DeleteAccount(string password, ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
+        }
+
         // Generic method for making a request to the web service, unfortunately
         // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)
@@ -87,5 +93,6 @@ namespace Services
             Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture as Texture2D;
             callback(Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f));
         }
+
     }
 }

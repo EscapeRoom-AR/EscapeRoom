@@ -54,9 +54,9 @@ namespace Services
             StartCoroutine(ImageCoroutine(url, callBack));
         }
 
-        public void Update(User user, ResponseCallback<string> listener)
+        public void UpdateUser(User user, ResponseCallback<string> listener)
         {
-            StartCoroutine(Request(USER, "PUT", listener));
+            StartCoroutine(Request(UPDATE_USER, "PUT", listener));
         }
 
         // Generic method for making a request to the web service, unfortunately

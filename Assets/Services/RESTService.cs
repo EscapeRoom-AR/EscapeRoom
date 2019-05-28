@@ -29,6 +29,7 @@ namespace Services
         private static string LOGIN = HOST + "/login?username={0}&password={1}";
         private static string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
         private static string USER = HOST + "/user";
+        private static string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
         private static string ROOMS = HOST + "/room";
         private static string ROOM = HOST + "/room";
         private static string RANKING = HOST + "/ranking";
@@ -51,6 +52,11 @@ namespace Services
         public void GetImage(string url, ImageCallBack callBack)
         {
             StartCoroutine(ImageCoroutine(url, callBack));
+        }
+
+        public void Update(User user, ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(USER, "PUT", listener));
         }
 
         // Generic method for making a request to the web service, unfortunately

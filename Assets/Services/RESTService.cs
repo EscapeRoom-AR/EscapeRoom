@@ -68,6 +68,11 @@ namespace Services
             StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
         }
 
+        public void GetRanking(ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(RANKING,"GET", listener));
+        }
+
         // Generic method for making a request to the web service, unfortunately
         // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)

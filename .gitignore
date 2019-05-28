@@ -3,3 +3,4 @@ Library/
 Build/
 **.csproj
 .vs/
+*.mp4

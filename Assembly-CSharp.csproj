@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{12B9DF75-516A-CB5B-A1D4-CFF36B113599}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Model\User.cs" />
     <Compile Include="Assets\Scripts\ChangePasswordScript.cs" />
     <Compile Include="Assets\Scripts\DeleteAccountScript.cs" />
+    <Compile Include="Assets\Scripts\GenerateRankingScript.cs" />
     <Compile Include="Assets\Scripts\ProfileImage.cs" />
     <Compile Include="Assets\Scripts\ProfileStart.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />

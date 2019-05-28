@@ -12,32 +12,35 @@ namespace Services
 
     public class RESTService : MonoBehaviour
     {
-        private static readonly HttpClient client = new HttpClient();
+        // These are callbacks definitions (like functional interfaces in java).
+        public delegate void ResponseCallback<T>(APIResponse<T> apiResponse);
+        public delegate void ImageCallBack(Sprite sprite);
 
+        // Holds token as web service returns { ... , data: { token: "tokenValue"} }
+        // Useful for using APIResponse.
+        [Serializable]
+        public class TokenHolder
+        {
+            public string token;
+        }
+
+        // Endpoints of the webservice.
         private static string HOST = "http://stucom.flx.cat/alu/dam2t02";
-        private static string LOGIN = HOST + "/login";
-        private static string REGISTER = HOST + "/register";
+        private static string LOGIN = HOST + "/login?username={0}&password={1}";
+        private static string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
         private static string USER = HOST + "/user";
         private static string ROOMS = HOST + "/room";
         private static string ROOM = HOST + "/room";
         private static string RANKING = HOST + "/ranking";
 
-        public APIResponse<TokenHolder> Login(string username, string password)
+        public void Login(User user,ResponseCallback<TokenHolder> listener)
         {
-            Debug.Log("login");
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(LOGIN + "?username={0}&password={1}", username, password));
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            string jsonResponse = reader.ReadToEnd();
-            APIResponse<TokenHolder> apiResponse = JsonUtility.FromJson<APIResponse<TokenHolder>>(jsonResponse);
-            Debug.Log(jsonResponse);
-            Debug.Log("DATA:" + apiResponse.data.token);
-            return apiResponse;
+            StartCoroutine(Request(String.Format(LOGIN, user.Username, user.Password), "GET", listener));
         }
 
         public void Register(User user, ResponseCallback<TokenHolder> listener)
         {
-            StartCoroutine(Upload(user, listener));
+            StartCoroutine(Request(String.Format(REGISTER,user.Username,user.Email,user.Password),"POST", listener));
         }
 
         public void GetUser(ResponseCallback<User> listener)
@@ -45,59 +48,35 @@ namespace Services
             StartCoroutine(Request(USER,"GET",listener));
         }
 
-        // Gets logged user information
-        //DEPRECATED
-        public APIResponse<User> GetUserRequest()
+        public void GetImage(string url, ImageCallBack callBack)
         {
-            Debug.Log("login");
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(USER);
-            request.Headers[HttpRequestHeader.Authorization] = PlayerPrefs.GetString("token");
-            print(request.Headers);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            string jsonResponse = reader.ReadToEnd();
-            print(jsonResponse);
-            APIResponse<User> apiResponse = JsonUtility.FromJson<APIResponse<User>>(jsonResponse);
-            Debug.Log("DATA:" + apiResponse.data.Username);
-            return apiResponse;
+            StartCoroutine(ImageCoroutine(url, callBack));
         }
 
+        // Generic method for making a request to the web service, unfortunately
+        // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)
         {
             UnityWebRequest www = new UnityWebRequest(URI, method);
             www.downloadHandler = new DownloadHandlerBuffer();
             www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
-            print("Request");
             yield return www.SendWebRequest();
-
             APIResponse<T> apiResponse;
             if (www.isNetworkError || www.isHttpError)
                 apiResponse = new APIResponse<T>(0, www.error);
             else
                 apiResponse = JsonUtility.FromJson<APIResponse<T>>(www.downloadHandler.text);
-            print("RESPONSE: " +www.downloadHandler.text);
             callBack(apiResponse);
         }
 
-        IEnumerator Upload(User user, ResponseCallback<TokenHolder> callBack)
+        // Downloads a sprite given a url.
+        IEnumerator ImageCoroutine(string url, ImageCallBack callback)
         {
-            UnityWebRequest www = UnityWebRequest.Post(REGISTER + "?username=" + user.Username + "&email=" + user.Email + "&password=" + user.Password, "");
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
             yield return www.SendWebRequest();
-
-            APIResponse<TokenHolder> apiResponse;
-            if (www.isNetworkError || www.isHttpError)
-                apiResponse = new APIResponse<TokenHolder>(0, www.error);
-            else
-                apiResponse = JsonUtility.FromJson<APIResponse<TokenHolder>>(www.downloadHandler.text);
-            callBack(apiResponse);
-        }
-
-        public delegate void ResponseCallback<T>(APIResponse<T> apiResponse);
-
-        [Serializable]
-        public class TokenHolder
-        {
-            public string token;
+            while (!www.downloadHandler.isDone) { }
+            Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture as Texture2D;
+            callback(Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f));
         }
     }
 }

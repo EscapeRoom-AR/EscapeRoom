@@ -22,9 +22,15 @@ namespace Model
 
         public User(string username, string email, string password)
         {
-            this.Username = username;
-            this.Email = email;
-            this.Password = password;
+            Username = username;
+            Email = email;
+            Password = password;
+        }
+
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
         }
     }
 

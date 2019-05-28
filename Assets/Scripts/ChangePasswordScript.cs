@@ -16,6 +16,11 @@ public class ChangePasswordScript : MonoBehaviour
 
     public void ChangePassword()
     {
+        if (Password.text.Length < 8)
+        {
+            modalService.ShowModal("Password must be at least 8 characters long");
+        }
+
         if (Password.text.Equals(PasswordRepeat.text))
         {
             restService.ChangePassword(OldPassword.text, Password.text, resp =>

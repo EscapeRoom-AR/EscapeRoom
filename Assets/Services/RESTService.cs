@@ -1,9 +1,6 @@
 ﻿using Model;
 using System;
 using System.Collections;
-using System.IO;
-using System.Net;
-using System.Net.Http;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -25,28 +22,29 @@ namespace Services
         }
 
         // Endpoints of the webservice.
-        private static string HOST = "http://stucom.flx.cat/alu/dam2t02";
-        private static string LOGIN = HOST + "/login?username={0}&password={1}";
-        private static string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
-        private static string USER = HOST + "/user";
-        private static string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
-        private static string ROOMS = HOST + "/room";
-        private static string ROOM = HOST + "/room";
-        private static string RANKING = HOST + "/ranking";
+        private static readonly string HOST = "http://stucom.flx.cat/alu/dam2t02";
+        private static readonly string LOGIN = HOST + "/login?username={0}&password={1}";
+        private static readonly string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
+        private static readonly string USER = HOST + "/user";
+        private static readonly string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
+        private static readonly string ROOMS = HOST + "/room";
+        private static readonly string ROOM = HOST + "/room";
+        private static readonly string RANKING = HOST + "/ranking";
+        private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
 
-        public void Login(User user,ResponseCallback<TokenHolder> listener)
+        public void Login(User user, ResponseCallback<TokenHolder> listener)
         {
             StartCoroutine(Request(String.Format(LOGIN, user.Username, user.Password), "GET", listener));
         }
 
         public void Register(User user, ResponseCallback<TokenHolder> listener)
         {
-            StartCoroutine(Request(String.Format(REGISTER,user.Username,user.Email,user.Password),"POST", listener));
+            StartCoroutine(Request(String.Format(REGISTER, user.Username, user.Email, user.Password), "POST", listener));
         }
 
         public void GetUser(ResponseCallback<User> listener)
         {
-            StartCoroutine(Request(USER,"GET",listener));
+            StartCoroutine(Request(USER, "GET", listener));
         }
 
         public void GetImage(string url, ImageCallBack callBack)
@@ -56,7 +54,12 @@ namespace Services
 
         public void UpdateUser(User user, ResponseCallback<string> listener)
         {
-            StartCoroutine(Request(UPDATE_USER, "PUT", listener));
+            StartCoroutine(Request(String.Format(UPDATE_USER, user.Username, user.Email, user.Description), "PUT", listener));
+        }
+
+        public void ChangePassword(string oldPassword, string password, ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(String.Format(PASSWORD, oldPassword, password), "PUT", listener));
         }
 
         // Generic method for making a request to the web service, unfortunately

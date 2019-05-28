@@ -69,6 +69,7 @@
     <Compile Include="Assets\Model\Room.cs" />
     <Compile Include="Assets\Model\User.cs" />
     <Compile Include="Assets\Scripts\ChangePasswordScript.cs" />
+    <Compile Include="Assets\Scripts\DeleteAccount.cs" />
     <Compile Include="Assets\Scripts\ProfileImage.cs" />
     <Compile Include="Assets\Scripts\ProfileStart.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />

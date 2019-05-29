@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -29,7 +30,7 @@ namespace Services
         private static readonly string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
         private static readonly string ROOMS = HOST + "/room";
         private static readonly string ROOM = HOST + "/room";
-        private static readonly string RANKING = HOST + "/ranking";
+        private static readonly string RANKING = HOST + "/paginated-ranking?room={0}";
         private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
         private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
 
@@ -68,17 +69,19 @@ namespace Services
             StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
         }
 
-        public void GetRanking(ResponseCallback<string> listener)
+        public void GetRanking(int room, ResponseCallback<IEnumerable<Game>> listener)
         {
-            StartCoroutine(Request(RANKING,"GET", listener));
+            StartCoroutine(Request(String.Format(RANKING, room), "GET", listener));
         }
 
         // Generic method for making a request to the web service, unfortunately
         // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)
         {
-            UnityWebRequest www = new UnityWebRequest(URI, method);
-            www.downloadHandler = new DownloadHandlerBuffer();
+            UnityWebRequest www = new UnityWebRequest(URI, method)
+            {
+                downloadHandler = new DownloadHandlerBuffer()
+            };
             www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
             yield return www.SendWebRequest();
             APIResponse<T> apiResponse;

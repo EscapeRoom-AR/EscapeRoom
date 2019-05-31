@@ -32,6 +32,7 @@ namespace Model
             Username = username;
             Password = password;
         }
+
     }
 
 }

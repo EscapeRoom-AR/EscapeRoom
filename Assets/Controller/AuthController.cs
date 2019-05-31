@@ -55,12 +55,12 @@ public class AuthController : MonoBehaviour
     }
 
     // Handles an APIResponse with a token.
-    private void Authenticate(APIResponse<RESTService.TokenHolder> apiResponse)
+    private void Authenticate(APIResponse<string> apiResponse)
     {
         if (apiResponse.IsError())
             modalService.ShowModal(apiResponse.message);
         else {
-            PlayerPrefs.SetString("token", apiResponse.data.token);
+            PlayerPrefs.SetString("token", apiResponse.data);
             SceneManager.LoadScene("Main");
         }
     }

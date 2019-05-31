@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   authController: {fileID: 1150958905}
   restService: {fileID: 1150958904}
+  modalService: {fileID: 1150958903}
   windowLoggedPrefab: {fileID: 5178331015287599277, guid: 5ec82fab7631c894186aa320647cc5c0,
     type: 3}
   windowUnLoggedPrefab: {fileID: 7198427612459486482, guid: d572f102bd4d56246b4cc067236e0880,

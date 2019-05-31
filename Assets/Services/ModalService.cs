@@ -13,15 +13,10 @@ namespace Services
         public void ShowModal(string text)
         {
             GameObject modal = Instantiate(modalPrefab, new Vector3(0,0,0), Quaternion.identity);
-            Text messageObject = GameObject.Find("Message").GetComponent<Text>();
+            Text messageObject = modal.transform.Find("Content").Find("Message").GetComponent<Text>();
             messageObject.text = text;
             modal.transform.SetParent(canvas.transform,false);
-            modal.name = "ErrorModal";
-        }
-
-        public void HideModal()
-        {
-            Destroy(GameObject.Find("ErrorModal"));
+            modal.transform.Find("ButtonHolder").Find("Button").GetComponent<Button>().onClick.AddListener(() => Destroy(modal));
         }
     }
 }

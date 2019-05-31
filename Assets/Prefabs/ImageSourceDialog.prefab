@@ -1148,6 +1148,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1423638158254422619}
   - component: {fileID: 7753929638939420085}
+  - component: {fileID: 4392109407832108560}
+  - component: {fileID: 2619466847819125729}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -1182,6 +1184,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  modal: {fileID: 0}
+  restService: {fileID: 4392109407832108560}
+  modalService: {fileID: 2619466847819125729}
+--- !u!114 &4392109407832108560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446574289950426785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eef44ba585129945ac6fd0558a43f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2619466847819125729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446574289950426785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a003757785ac7b4b86f2cbb188bcdc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  modalPrefab: {fileID: 5603889215301867625, guid: 5c5629355d7f8f640b1eb8fca96c9636,
+    type: 3}
 --- !u!1 &8474469248963904678
 GameObject:
   m_ObjectHideFlags: 0

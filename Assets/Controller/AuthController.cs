@@ -34,7 +34,7 @@ public class AuthController : MonoBehaviour
         if (usernameField.text == "" || passwordField.text == "")
             modalService.ShowModal("All fields are required");
         else if (passwordField.text.Length < 8)
-            modalService.ShowModal("Password must be at least 8 characters long.");
+            modalService.ShowModal("Password must be at least 8 characters long");
         else 
             restService.Login(new User(usernameField.text, passwordField.text), apiResponse => Authenticate(apiResponse));
     }

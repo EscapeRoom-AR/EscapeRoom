@@ -28,8 +28,10 @@ namespace Services
         private static string UPDATE_USER_PHOTO = USER + "?photo={0}";
         private static string ROOMS = HOST + "/room";
         private static string ROOM = HOST + "/room";
-        private static string RANKING = HOST + "/ranking";
         private static string PHOTO = "http://alexraspberry.ddns.net:8080/post.php";
+        private static readonly string RANKING = HOST + "/paginated-ranking?room={0}";
+        private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
+        private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
 
         public void Login(User user,ResponseCallback<string> listener)
         {
@@ -38,12 +40,12 @@ namespace Services
 
         public void Register(User user, ResponseCallback<string> listener)
         {
-            StartCoroutine(Request(String.Format(REGISTER,user.Username,user.Email,user.Password),"POST", listener));
+            StartCoroutine(Request(String.Format(REGISTER, user.Username, user.Email, user.Password), "POST", listener));
         }
 
         public void GetUser(ResponseCallback<User> listener)
         {
-            StartCoroutine(Request(USER,"GET",listener));
+            StartCoroutine(Request(USER, "GET", listener));
         }
 
         public void GetImage(string url, ImageCallBack callBack)
@@ -54,6 +56,21 @@ namespace Services
         public void UpdateUser(User user, ResponseCallback<User> listener)
         {
             StartCoroutine(Request(String.Format(UPDATE_USER,user.Username,user.Email,user.Description), "PUT", listener));
+        }
+
+        public void ChangePassword(string oldPassword, string password, ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(String.Format(PASSWORD, oldPassword, password), "PUT", listener));
+        }
+
+        public void DeleteAccount(string password, ResponseCallback<string> listener)
+        {
+            StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
+        }
+
+        public void GetRanking(int room, ResponseCallback<IEnumerable<Game>> listener)
+        {
+            StartCoroutine(Request(String.Format(RANKING, room), "GET", listener));
         }
 
         public void UpdateUserImage(string photoUrl, ResponseCallback<User> listener)
@@ -80,9 +97,12 @@ namespace Services
         // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)
         {
-            UnityWebRequest www = new UnityWebRequest(URI, method);
-            www.downloadHandler = new DownloadHandlerBuffer();
-            www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
+            UnityWebRequest www = new UnityWebRequest(URI, method)
+            {
+                downloadHandler = new DownloadHandlerBuffer()
+            };
+            //www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
+            www.SetRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.NzY.7FWNYxsywRKDcWgyLsQ3QSbFyBTaZ0JIB3dZ1eyIflM");
             yield return www.SendWebRequest();
             APIResponse<T> apiResponse;
             if (www.isNetworkError || www.isHttpError)

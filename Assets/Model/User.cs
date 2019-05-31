@@ -18,8 +18,6 @@ namespace Model
         public string Password;
         public string Description;
 
-        public User() { }
-
         public User(string username, string email, string password)
         {
             Username = username;

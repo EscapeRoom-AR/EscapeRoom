@@ -21,6 +21,7 @@ public class GetRankingScript : MonoBehaviour
 
     public void GetRankings()
     {
+        print("GET RANKINGS");
         rest.GetRanking(_roomCode, resp =>
          {
              print(resp.message); // remove
@@ -28,7 +29,7 @@ public class GetRankingScript : MonoBehaviour
                  modal.ShowModal(resp.message);
              else rankings = resp.data;
 
-             if (rankings.Any())
+             if (rankings != null && rankings.Any())
                  foreach (var ranking in rankings)
                  {
                      print(ranking.Time);

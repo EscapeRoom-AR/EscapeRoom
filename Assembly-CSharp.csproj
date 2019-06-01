@@ -190,7 +190,6 @@
      <None Include="Assets\StreamingAssets\Vuforia\ScapeRoomAR.xml" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Vuforia\Shaders\DepthContour.shader" />
-     <None Include="Assets\Objects\Gargoyle\readme_first.txt" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/alex/Desktop/HelloDarkness/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

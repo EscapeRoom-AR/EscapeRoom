@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VuforiaScripts", "VuforiaScripts.csproj", "{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{12B9DF75-516A-CB5B-A1D4-CFF36B113599}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{E668C125-6587-755D-713A-2AB5F4A0CD3E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VuforiaScripts", "VuforiaScripts.csproj", "{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{987BA5D3-FC2C-24C7-6744-2178CAD8A799}"
 EndProject
@@ -19,6 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12B9DF75-516A-CB5B-A1D4-CFF36B113599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12B9DF75-516A-CB5B-A1D4-CFF36B113599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B9DF75-516A-CB5B-A1D4-CFF36B113599}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,10 +31,6 @@ Global
 		{E668C125-6587-755D-713A-2AB5F4A0CD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E668C125-6587-755D-713A-2AB5F4A0CD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E668C125-6587-755D-713A-2AB5F4A0CD3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{987BA5D3-FC2C-24C7-6744-2178CAD8A799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{987BA5D3-FC2C-24C7-6744-2178CAD8A799}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{987BA5D3-FC2C-24C7-6744-2178CAD8A799}.Release|Any CPU.ActiveCfg = Release|Any CPU

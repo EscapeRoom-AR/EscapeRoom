@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: alb
+  m_Name: Planks2d
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+  m_ShaderKeywords: _EMISSION _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: b7b20e55fbdae5d4381a287be27629f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: ff768f4548587994ba61cf7c17d2ba30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,19 +40,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a863c508e2343f74a86f96a5541615ca, type: 3}
+        m_Texture: {fileID: 2800000, guid: bf7a5235c92031d4982b2aa6fa9b3a90, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: a621a21758c92014c94c7497f6dc4c93, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: e18ddffa82568c441b8706bcf8bc0d77, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9592c6321cb14c543be4a532fd686304, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ef62f8e007645cf46bfeb767c0e36c4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -61,12 +61,12 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.15
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.179
     - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _OcclusionStrength: 0.629
+    - _Parallax: 0.0126
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

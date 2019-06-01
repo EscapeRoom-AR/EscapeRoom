@@ -72,11 +72,9 @@ public static class OpenSourceInitializer
             go.AddComponent<DefaultInitializationErrorHandler>();
         }
 
-        public void AddDefaultModelRecoEventHandler(GameObject modelReco, ModelTargetBehaviour modelTargetTemplate)
+        public void AddDefaultModelRecoEventHandler(GameObject modelReco)
         {
-            var mreh = modelReco.AddComponent<DefaultModelRecoEventHandler>();
-            mreh.ShowBoundingBox = true;
-            mreh.ModelTargetTemplate = modelTargetTemplate;
+            modelReco.AddComponent<DefaultModelRecoEventHandler>();
         }
     }
 }

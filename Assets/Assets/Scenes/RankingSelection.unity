@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 128757133}
   - component: {fileID: 128757132}
   - component: {fileID: 128757131}
-  - component: {fileID: 128757130}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -296,19 +295,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &128757130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128757129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
 --- !u!114 &128757131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +596,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1431779123}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -1980,7 +1966,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1431779124}
-  - component: {fileID: 1431779123}
   - component: {fileID: 1431779122}
   - component: {fileID: 1431779121}
   - component: {fileID: 1431779120}
@@ -2036,18 +2021,6 @@ MonoBehaviour:
   passwordField: {fileID: 0}
   passwordRepeatField: {fileID: 0}
   emailField: {fileID: 0}
---- !u!114 &1431779123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431779119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9eded57979859b48bb450b87334aec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1431779124
 Transform:
   m_ObjectHideFlags: 0

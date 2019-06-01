@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class openTreasure : MonoBehaviour
+public class OpenTreasure : MonoBehaviour
 {
     public GameObject chest;
 

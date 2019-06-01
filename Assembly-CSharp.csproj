@@ -144,8 +144,8 @@
      <Compile Include="Assets\Code\Model\ItemHint.cs" />
      <Compile Include="Assets\Code\Model\Room.cs" />
      <Compile Include="Assets\Code\Model\User.cs" />
-     <Compile Include="Assets\Code\Scripts\GameScene\Anims\fuego.cs" />
-     <Compile Include="Assets\Code\Scripts\GameScene\Anims\openTreasure.cs" />
+     <Compile Include="Assets\Code\Scripts\GameScene\Anims\OpenTreasure.cs" />
+     <Compile Include="Assets\Code\Scripts\GameScene\Anims\TorchFire.cs" />
      <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\InventoryButton.cs" />
      <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\PaperMouseDown.cs" />
      <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\PedirCode.cs" />

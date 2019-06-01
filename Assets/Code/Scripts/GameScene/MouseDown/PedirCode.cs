@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class pedirCode : MonoBehaviour
+public class PedirCode : MonoBehaviour
 {
     GameObject window;
     public GameObject InputCode;

@@ -195,7 +195,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1150958907}
-  - component: {fileID: 1150958906}
   - component: {fileID: 1150958905}
   - component: {fileID: 1150958904}
   - component: {fileID: 1150958903}
@@ -252,18 +251,6 @@ MonoBehaviour:
   passwordField: {fileID: 0}
   passwordRepeatField: {fileID: 0}
   emailField: {fileID: 0}
---- !u!114 &1150958906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150958902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9eded57979859b48bb450b87334aec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1150958907
 Transform:
   m_ObjectHideFlags: 0
@@ -510,7 +497,6 @@ GameObject:
   - component: {fileID: 1609323034}
   - component: {fileID: 1609323033}
   - component: {fileID: 1609323032}
-  - component: {fileID: 1609323031}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -518,19 +504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1609323031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609323030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
 --- !u!114 &1609323032
 MonoBehaviour:
   m_ObjectHideFlags: 0

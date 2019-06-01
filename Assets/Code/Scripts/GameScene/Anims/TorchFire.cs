@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class fuego : MonoBehaviour
+public class TorchFire : MonoBehaviour
 {
 
     public GameObject TorchLight;

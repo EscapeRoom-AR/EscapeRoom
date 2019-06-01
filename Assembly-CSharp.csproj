@@ -84,13 +84,13 @@
      <Compile Include="Assets\Code\Scripts\URL.cs" />
      <Compile Include="Assets\Code\Services\ModalService.cs" />
      <Compile Include="Assets\Code\Services\RESTService.cs" />
-     <Compile Include="Assets\Objects\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\Objects\Knight\scripts\rotator.cs" />
      <Compile Include="Assets\Objects\OldChest\DemoScene\MouseOrbit.cs" />
      <Compile Include="Assets\Objects\Torch\scene\script\TorchSlider.cs" />
      <Compile Include="Assets\Objects\Torch\scene\script\Torchslider2.cs" />
      <Compile Include="Assets\Objects\Torch\scripts\Torchelight.cs" />
      <Compile Include="Assets\Objects\Wooden Chairs\Models\Prefabs\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Sprites\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\UDT\UDTEventHandler.cs" />
      <Compile Include="Assets\UDT\UDTFrameQualityMeter.cs" />
      <Compile Include="Assets\UDT\UDTTrackableEventHandler.cs" />

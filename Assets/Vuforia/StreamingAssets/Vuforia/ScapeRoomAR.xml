@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="SILLA" size="1.000000 1.000000" />
+    <ImageTarget name="llavero-7-llaves-9969751z0-19173967" size="1.000000 1.000000" />
+    <ImageTarget name="0" size="1.000000 0.750000" />
+    <ImageTarget name="star" size="1.000000 0.750000" />
+    <ImageTarget name="IMG_20190318_194342" size="1.000000 0.750000" />
+    <ImageTarget name="Matrix-1" size="1.000000 1.000000" />
+    <ImageTarget name="monkeys" size="100.000000 75.000000" />
+    <ImageTarget name="Screen-Shot-2015" size="100.000000 91.238098" />
+  </Tracking>
+</QCARConfig>

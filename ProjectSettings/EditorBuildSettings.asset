@@ -6,45 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ScapeRoomScene.unity
+    path: Assets/Assets/Scenes/ScapeRoomScene.unity
     guid: 18a35596ba54a204181ec792a30071f8
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Assets/Scenes/Start.unity
     guid: fbea28b1e71575947a0f90f5402e0d63
   - enabled: 1
-    path: Assets/Scenes/Login.unity
+    path: Assets/Assets/Scenes/Login.unity
     guid: b3384fd17b0e6934ba4d6cc24c86445f
   - enabled: 1
-    path: Assets/Scenes/Register.unity
+    path: Assets/Assets/Scenes/Register.unity
     guid: 59c1f61036e69e84fb5c230c2e7eef03
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Assets/Scenes/Main.unity
     guid: d624b4931b67e1a46a61e08418a008a4
   - enabled: 1
-    path: Assets/Scenes/ChangePassword.unity
+    path: Assets/Assets/Scenes/ChangePassword.unity
     guid: 50646714b5fb119439c9e228626b1c71
   - enabled: 1
-    path: Assets/Scenes/AboutUs.unity
+    path: Assets/Assets/Scenes/AboutUs.unity
     guid: f80be786ce6ef284284e211a6f13f37a
   - enabled: 1
-    path: Assets/Scenes/PlaySelection.unity
+    path: Assets/Assets/Scenes/PlaySelection.unity
     guid: 12e7f4822fa4d1f488255252200bd7a2
   - enabled: 1
-    path: Assets/Scenes/RankingSelection.unity
+    path: Assets/Assets/Scenes/RankingSelection.unity
     guid: f6446f9de53d0404184981330cc0e40b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/Assets/Scenes/Settings.unity
     guid: 807df358b6429104789fcfce4be6221b
   - enabled: 1
-    path: Assets/Scenes/Account.unity
+    path: Assets/Assets/Scenes/Account.unity
     guid: b1ac6603a55657c478da5b12ce823882
   - enabled: 1
-    path: Assets/Scenes/Premium.unity
+    path: Assets/Assets/Scenes/Premium.unity
     guid: 0e1389d9679c3ab43a7e76cb470be193
   - enabled: 1
-    path: Assets/Scenes/Profile.unity
+    path: Assets/Assets/Scenes/Profile.unity
     guid: 60ad2c3f1b68666439fb31efcc39f8f0
   m_configObjects: {}

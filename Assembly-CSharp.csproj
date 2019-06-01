@@ -84,7 +84,6 @@
      <Compile Include="Assets\Code\Scripts\URL.cs" />
      <Compile Include="Assets\Code\Services\ModalService.cs" />
      <Compile Include="Assets\Code\Services\RESTService.cs" />
-     <Compile Include="Assets\Objects\Knight\scripts\rotator.cs" />
      <Compile Include="Assets\Objects\OldChest\DemoScene\MouseOrbit.cs" />
      <Compile Include="Assets\Objects\Torch\scene\script\TorchSlider.cs" />
      <Compile Include="Assets\Objects\Torch\scene\script\Torchslider2.cs" />
@@ -183,7 +182,7 @@
      <None Include="Assets\Vuforia\Shaders\OutlineOpaque.shader" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Vuforia\Databases\Emulator\VuforiaEmulator.xml" />
-     <None Include="Assets\Objects\Knight\shaders\doublesidedshader.shader" />
+     <None Include="Assets\Sprites\Knight\shaders\doublesidedshader.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\Targets.xml" />
      <None Include="Assets\StreamingAssets\Vuforia\ScapeRoomAR.xml" />

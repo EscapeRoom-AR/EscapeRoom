@@ -32,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/RankingSelection.unity
     guid: f6446f9de53d0404184981330cc0e40b
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Assets/Scenes/Settings.unity
     guid: 807df358b6429104789fcfce4be6221b

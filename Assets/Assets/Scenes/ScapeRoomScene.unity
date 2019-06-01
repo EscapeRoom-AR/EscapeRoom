@@ -497,6 +497,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!65 &162118709
 BoxCollider:
@@ -601,6 +609,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -724,6 +740,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -1372,6 +1396,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252230585}
   m_CullTransparentMesh: 0
+--- !u!21 &257038345
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'QR_papel2_relojMaterial
+
+    114140'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ca345e072a1e4d2f8af32d333dda1f26, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!111 &259888687
 Animation:
   m_ObjectHideFlags: 0
@@ -1665,6 +1717,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!21 &269886252
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'QR_papel1Material
+
+    114186'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b95ed54b1d6e4e91bc9daa99e3758b82, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!21 &281113055
 Material:
   serializedVersion: 6
@@ -2594,6 +2674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!65 &401804040
 BoxCollider:
@@ -2958,6 +3046,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -3778,6 +3874,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!64 &623363602
 MeshCollider:
@@ -4130,6 +4234,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -4579,6 +4691,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!64 &779130599
 MeshCollider:
@@ -4649,6 +4769,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -7802,9 +7930,9 @@ GameObject:
   - component: {fileID: 886212688}
   - component: {fileID: 886212687}
   - component: {fileID: 886212691}
-  - component: {fileID: 886212690}
   - component: {fileID: 886212693}
   - component: {fileID: 886212692}
+  - component: {fileID: 886212690}
   m_Layer: 0
   m_Name: Paper2
   m_TagString: Untagged
@@ -7899,16 +8027,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 886212685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d579c817ed3b57e43b12e918c852a2b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8667630c97e9d5148855fb05d92bbaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modalPrefab: {fileID: 5941511266285344153, guid: a09d2024e5cb9c0439b893d983a71455,
-    type: 3}
-  canvas: {fileID: 2340012459535679343}
-  inventory: {fileID: 1872319657}
-  papersPicked: 0
-  gameController: {fileID: 0}
-  allPapersSprite: {fileID: 0}
+  controller: {fileID: 1872319659}
 --- !u!65 &886212691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9198,6 +9320,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!64 &1219638995
 MeshCollider:
@@ -9952,7 +10082,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1988872953}
+  - {fileID: 257038345}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10173,6 +10303,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!65 &1342077501
 BoxCollider:
@@ -10187,34 +10325,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7518692, y: 0.30828676, z: 0.51827234}
   m_Center: {x: -0.0020308048, y: 0.15678214, z: -0.009779699}
---- !u!21 &1343047487
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'QR_papel1Material
-
-    75150'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b95ed54b1d6e4e91bc9daa99e3758b82, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1347252964
 GameObject:
   m_ObjectHideFlags: 0
@@ -10259,6 +10369,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -10367,7 +10485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1343047487}
+  - {fileID: 269886252}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29872,6 +29990,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877342bfe0bbfc47894f5d0653ca625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 0}
 --- !u!65 &1833903646
 BoxCollider:
@@ -30586,34 +30712,6 @@ Transform:
   m_Father: {fileID: 1016683798}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 359.751, z: 0}
---- !u!21 &1988872953
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'QR_papel2_relojMaterial
-
-    75106'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ca345e072a1e4d2f8af32d333dda1f26, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &2027658596
 GameObject:
   m_ObjectHideFlags: 0

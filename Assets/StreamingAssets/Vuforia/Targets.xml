@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="QR_silla_llave" size="1.000000 1.000000" />
+    <ImageTarget name="qr_puerta" size="1.000000 1.000000" />
+    <ImageTarget name="QR_papel4_oso" size="1.000000 1.000000" />
+    <ImageTarget name="QR_papel3_caja" size="1.000000 1.000000" />
+    <ImageTarget name="QR_papel2_reloj" size="1.000000 1.000000" />
+    <ImageTarget name="QR_papel1" size="1.000000 1.000000" />
+    <ImageTarget name="QR_knight" size="1.000000 1.000000" />
+    <ImageTarget name="QR_dibujo2_estanteria" size="1.000000 1.000000" />
+    <ImageTarget name="QR_dibujo1_cajaFuerte" size="1.000000 1.000000" />
+    <ImageTarget name="QR_cuadro" size="1.000000 1.000000" />
+    <ImageTarget name="QR_cofre_pistaFinal" size="1.000000 1.000000" />
+    <ImageTarget name="QR_busto" size="1.000000 1.000000" />
+    <ImageTarget name="QR_gargola2" size="1.000000 1.000000" />
+    <ImageTarget name="QR_antorcha2" size="1.000000 1.000000" />
+    <ImageTarget name="3" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>

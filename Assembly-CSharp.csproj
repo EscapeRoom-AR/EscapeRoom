@@ -181,7 +181,6 @@
      <None Include="Assets\StreamingAssets\Vuforia\VuMarkDatabase.xml" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\Vuforia\Shaders\OutlineOpaque.shader" />
-     <None Include="Assets\Objects\Key\readME keys.txt" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Vuforia\Databases\Emulator\VuforiaEmulator.xml" />
      <None Include="Assets\Objects\Knight\shaders\doublesidedshader.shader" />

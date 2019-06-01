@@ -2374,8 +2374,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 2143964338}
+        m_MethodName: changeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3020,6 +3020,7 @@ GameObject:
   - component: {fileID: 2143964337}
   - component: {fileID: 2143964336}
   - component: {fileID: 2143964335}
+  - component: {fileID: 2143964338}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -3072,6 +3073,18 @@ MonoBehaviour:
   passwordField: {fileID: 0}
   passwordRepeatField: {fileID: 0}
   emailField: {fileID: 0}
+--- !u!114 &2143964338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143964334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220e3a631da284b479d58f40e5aa622a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2143964339
 Transform:
   m_ObjectHideFlags: 0

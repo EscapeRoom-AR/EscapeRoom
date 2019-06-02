@@ -32,6 +32,7 @@ namespace Services
         private static readonly string RANKING = HOST + "/paginated-ranking?room={0}";
         private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
         private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
+        private static readonly string GAME = HOST + "/game?hints={0}&time={1}&room={2}";
 
         public void Login(User user,ResponseCallback<string> listener)
         {
@@ -81,6 +82,11 @@ namespace Services
         public void PostPhoto(string photo, ResponseCallback<String> listener)
         {
             StartCoroutine(PostImage(photo,listener));
+        }
+
+        public void PostGame(Game game, ResponseCallback<String> listener)
+        {
+            StartCoroutine(Request(String.Format(GAME, game.HintsUsed, game.Time, game.Room),"POST",listener);
         }
 
         // Downloads a sprite given a url.

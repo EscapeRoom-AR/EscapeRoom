@@ -22,7 +22,8 @@ public class AudioService: MonoBehaviour
 
     public void Play()
     {
-        AudioSource.Play();
+        if (PlayerPrefs.GetString("sound") != "off")
+            AudioSource.Play();
     }
 
     public void Stop()

@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 484442345}
   - component: {fileID: 484442348}
   - component: {fileID: 484442347}
+  - component: {fileID: 484442349}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -428,6 +429,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cfd6c2699bf7443a6dbbd2dae526e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &484442349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484442341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1f6efa1f2e49f479b57322b4ff1f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleSound: {fileID: 4342771488380039567}
+  toggleTutorial: {fileID: 1151004745}
 --- !u!1 &664101705
 GameObject:
   m_ObjectHideFlags: 0

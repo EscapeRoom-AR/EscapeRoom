@@ -6,6 +6,6 @@ public class ToggleSound : MonoBehaviour
 {
     public void OnValueChanged(bool value)
     {
-        PlayerPrefs.SetInt("sound", value ? 1 : 0);
+        PlayerPrefs.SetString("sound", value ? "on" : "off");
     }
 }

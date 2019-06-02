@@ -6,6 +6,6 @@ public class ToggleTutorial : MonoBehaviour
 {
     public void OnValueChanged(bool value)
     {
-        PlayerPrefs.SetInt("tutorial", value ? 1 : 0);
+        PlayerPrefs.SetString("tutorial", value ? "on" : "off");
     }
 }

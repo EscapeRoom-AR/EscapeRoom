@@ -58,8 +58,8 @@ public class ProfileStart : MonoBehaviour
             Button imageButton = content.Find("ImageButton").GetComponent<Button>();
             Image image = imageButton.gameObject.transform.Find("Mask").Find("Icon").GetComponent<Image>();
             imageButton.onClick.AddListener(() => SelectProfileImage(image));
-            /*if (user.Image != "")
-                restService.GetImage(user.Image, sprite => image.sprite = sprite);*/
+            if (user.Image != "")
+                restService.GetImage(user.Image, sprite => image.sprite = sprite);
                 
         });
 

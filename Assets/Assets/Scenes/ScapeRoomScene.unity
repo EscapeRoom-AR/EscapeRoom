@@ -343,6 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &90856572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2682,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!65 &401804040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3492,7 +3502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -574.6096, y: -297.25214}
+  m_AnchoredPosition: {x: -447, y: -369}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608425650
@@ -4232,6 +4242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!65 &673734144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8279,6 +8294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &886212685
 GameObject:
   m_ObjectHideFlags: 0
@@ -9068,7 +9088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -300.76306}
+  m_AnchoredPosition: {x: 127.60962, y: -372.51093}
   m_SizeDelta: {x: 910, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062755751
@@ -29854,6 +29874,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841439cedf815f24cb1839a929438fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  torchSolved: 0
 --- !u!65 &1634430214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30121,7 +30146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -774, y: 276}
+  m_AnchoredPosition: {x: -689.61, y: 201}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702848229
@@ -30557,6 +30582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!65 &1833903646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30641,6 +30671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryObject: {fileID: 1062755749}
   itemsImages: []
+  selectedItemImage: {fileID: 0}
 --- !u!114 &1872319658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31370,7 +31401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -574.6096, y: -297.2522}
+  m_AnchoredPosition: {x: -447, y: -369.00006}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048459569
@@ -32103,6 +32134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8d854e0347eb4292e9500cca825bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderController: {fileID: 0}
+  modalPrefab: {fileID: 0}
+  canvas: {fileID: 0}
+  sprite: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &2116679450
 GameObject:
   m_ObjectHideFlags: 0

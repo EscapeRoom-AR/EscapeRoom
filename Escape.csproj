@@ -756,8 +756,8 @@
     <Compile Include="Assets\Code\Scripts\UI\Ranking\GetRankingScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\PleaseDontScrollIntoInfinity.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\RoomID.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\Utils\ActivatePlayButton.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Utils\SelectScene.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\Utils\SliderSelect.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Utils\URL.cs" />
     <Compile Include="Assets\Code\Services\ModalService.cs" />
     <Compile Include="Assets\Code\Services\RESTService.cs" />

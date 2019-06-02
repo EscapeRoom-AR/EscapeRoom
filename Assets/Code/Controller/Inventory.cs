@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     private List<InteractiveItem> itemsInventory;
     public GameObject InventoryObject;
     public List<Image> itemsImages;
+    public Image selectedItemImage;
+    public InteractiveItem selectedItem;
 
     public void Start()
     {
@@ -24,13 +26,21 @@ public class Inventory : MonoBehaviour
                 .GetComponent<Image>()
             );
         }
-        
+
     }
 
     public void ButtonTapped(int index)
     {
+        print("index:" + index);
         if (index < itemsInventory.Count)
-            itemsInventory[index].Callback();
+        {
+            selectedItem = itemsInventory[index];
+            print("tag:" + selectedItem.Tag);
+            selectedItem.Callback();
+            selectedItemImage.sprite = selectedItem.Sprite;
+
+        }
+
     }
 
 
@@ -39,26 +49,29 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < itemsInventory.Count; i++)
         {
-            if (itemsInventory[i].Tag.Equals(tag)) {
+            if (itemsInventory[i].Tag.Equals(tag))
+            {
                 itemsInventory.Remove(itemsInventory[i]);
             }
         }
         UpdateUI();
     }
 
-    public void AddToInventory(InteractiveItem item) {
+    public void AddToInventory(InteractiveItem item)
+    {
         itemsInventory.Add(item);
         UpdateUI();
     }
 
-    public void removeFromInventory(InteractiveItem item) {
+    public void removeFromInventory(InteractiveItem item)
+    {
         itemsInventory.Remove(item);
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-       for (int i = 0; i < itemsImages.Count; i++)
+        for (int i = 0; i < itemsImages.Count; i++)
         {
             if (i < itemsInventory.Count)
                 itemsImages[i].sprite = itemsInventory[i].Sprite;

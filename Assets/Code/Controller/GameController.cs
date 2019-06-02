@@ -18,10 +18,10 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Countdown <= 0)
-            timeUp();
-        else
-            CountDown();
+        /* if (Countdown <= 0)
+             timeUp();
+         else
+             CountDown();*/
     }
 
     public void NextPhase()

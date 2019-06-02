@@ -17,7 +17,7 @@ public class PaperHintController : MonoBehaviour
 
     private void Start()
     {
-        papersPicked = 1;
+        papersPicked = 3;
         tag = "paper";
         isModalShown = false;
     }
@@ -30,7 +30,7 @@ public class PaperHintController : MonoBehaviour
         Destroy(gameObject);
         inventory.AddToInventory(item);
         if (papersPicked == 4) Complete();
-        
+
 
     }
 
@@ -42,7 +42,7 @@ public class PaperHintController : MonoBehaviour
         ShowModal(allPapersSprite);
         gameController.NextPhase();
     }
-    
+
     private void ShowModal(Sprite sprite)
     {
         if (isModalShown)

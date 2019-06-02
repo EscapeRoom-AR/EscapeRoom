@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractiveItem 
+public class InteractiveItem
 {
     public Sprite Sprite;
     public string Tag;

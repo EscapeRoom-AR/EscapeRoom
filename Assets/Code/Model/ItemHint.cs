@@ -1,16 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Model
 {
-
-    public class ItemHint
+    [Serializable]
+    public class GameHint
     {
-        private string hint;
-        private Item item;
+        public int Id;
+        public int RoomCode;
+        public string Hint;
+        public int Phase;
 
-        public Item Item { get => item; set => item = value; }
-        public string Hint { get => hint; set => hint = value; }
     }
 }

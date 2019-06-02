@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: {fileID: 361825625}
+  Title: {fileID: 1692747016}
 --- !u!1 &103619653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2119,7 @@ GameObject:
   - component: {fileID: 1692747016}
   - component: {fileID: 1692747015}
   m_Layer: 5
-  m_Name: Message (1)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

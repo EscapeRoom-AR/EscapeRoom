@@ -23,6 +23,7 @@ public class ProfileStart : MonoBehaviour
 
     void Start()
     {
+
         GameObject window;
         if (authController.IsAuthenticated()) {
             
@@ -36,6 +37,8 @@ public class ProfileStart : MonoBehaviour
             window.transform.SetParent(canvas.transform, false);
         }
 
+        
+
     }
 
     private void FillUserInfo(GameObject window) {
@@ -43,11 +46,11 @@ public class ProfileStart : MonoBehaviour
             User user = apiResponse.data;
             Transform content = window.transform.Find("Content");
             
-            usernameField = content.Find("EmailField").GetComponent<InputField>();
-            usernameField.text = user.Email;
+            usernameField = content.Find("UsernameField").GetComponent<InputField>();
+            usernameField.text = user.Username;
 
-            emailField = content.Find("UsernameField").GetComponent<InputField>();
-            emailField.text = user.Username;
+            emailField = content.Find("EmailField").GetComponent<InputField>();
+            emailField.text = user.Email;
 
             descriptionField = content.Find("DescriptionField").GetComponent<InputField>();
             descriptionField.text = user.Description;
@@ -86,6 +89,9 @@ public class ProfileStart : MonoBehaviour
         user.Description = descriptionField.text;
         user.Email = emailField.text;
         user.Username = usernameField.text;
+        print("Username: " + user.Username);
+        print("Email: " + user.Email);
+        modalService.ShowModal("Username: " + user.Username);
         restService.UpdateUser(user, apiResponse => {
             modalService.ShowModal(apiResponse.message);
         });

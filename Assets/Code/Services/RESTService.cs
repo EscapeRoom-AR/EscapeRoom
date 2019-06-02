@@ -78,7 +78,7 @@ namespace Services
             StartCoroutine(Request(String.Format(UPDATE_USER_PHOTO, photoUrl), "PUT", listener));
         }
 
-        public void PostPhoto(string photo, ResponseCallback<string> listener)
+        public void PostPhoto(string photo, ResponseCallback<String> listener)
         {
             StartCoroutine(PostImage(photo,listener));
         }
@@ -97,12 +97,9 @@ namespace Services
         // parameters must be embedded in url in case of POST or PUT. (should be fixed)
         IEnumerator Request<T>(string URI, string method, ResponseCallback<T> callBack)
         {
-            UnityWebRequest www = new UnityWebRequest(URI, method)
-            {
-                downloadHandler = new DownloadHandlerBuffer()
-            };
-            //www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
-            www.SetRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.NzY.7FWNYxsywRKDcWgyLsQ3QSbFyBTaZ0JIB3dZ1eyIflM");
+            UnityWebRequest www = new UnityWebRequest(URI, method) { downloadHandler = new DownloadHandlerBuffer() };
+            www.SetRequestHeader("Authorization", PlayerPrefs.GetString("token"));
+            //www.SetRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.NzY.7FWNYxsywRKDcWgyLsQ3QSbFyBTaZ0JIB3dZ1eyIflM");
             yield return www.SendWebRequest();
             APIResponse<T> apiResponse;
             if (www.isNetworkError || www.isHttpError)
@@ -122,9 +119,7 @@ namespace Services
             www.chunkedTransfer = false;
             yield return www.SendWebRequest();
             APIResponse<string> apiResponse;
-            print(www.downloadHandler.text);
-            print("hola?");
-            if (www.error != "")
+            if (www.isNetworkError || www.isHttpError)
                 apiResponse = new APIResponse<string>(0, www.error);
             else
                 apiResponse = JsonUtility.FromJson<APIResponse<string>>(www.downloadHandler.text);

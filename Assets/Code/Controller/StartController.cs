@@ -10,14 +10,13 @@ public class StartController : MonoBehaviour
     void Start()
     {
         string nameScene = authController.IsAuthenticated() ? "Main" : "Login";
+        AudioService.Instance.Play();
         StartCoroutine(Timeout(nameScene));
     }
 
     IEnumerator Timeout(string nameScene)
     {
-        print(Time.time);
         yield return new WaitForSeconds(3);
-        print(nameScene);
         SceneManager.LoadScene(nameScene);
     }
 

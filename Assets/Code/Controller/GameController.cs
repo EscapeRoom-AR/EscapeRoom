@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
             }
             AreHintsAvailable = true;
         });
-
+        AudioService.Instance.Stop();
     }
 
     private void Update()

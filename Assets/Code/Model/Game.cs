@@ -14,6 +14,6 @@ namespace Model
         public int HintsUsed { get; set; }
         public int Time { get; set; }
         public User User { get; set; }
-        public Room Room { get; set; }
+        public int Room { get; set; }
     }
 }

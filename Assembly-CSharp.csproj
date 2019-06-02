@@ -161,6 +161,7 @@
     <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\PedirCode.cs" />
     <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\TorchMouseDown.cs" />
     <Compile Include="Assets\Code\Scripts\GameScene\MouseDown\TouchDownPainting.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\EndScene\EndSceneStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Profile\ChangePasswordScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Profile\DeleteAccountScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Profile\ProfileImage.cs" />

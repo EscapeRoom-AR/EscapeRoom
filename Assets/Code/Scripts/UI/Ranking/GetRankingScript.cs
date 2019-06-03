@@ -3,6 +3,7 @@ using Services;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetRankingScript : MonoBehaviour
 {
@@ -61,6 +62,13 @@ public class GetRankingScript : MonoBehaviour
         {
             var list = _rankingListsArray.ElementAt(i);
             Destroy(list);
+            //_rankingListsArray.Remove();
+        }
+
+        for (int i = 0; i > RankingHolder.Count; i++)
+        {
+            var list = _rankingListsArray.ElementAt(i);
+            list.transform.Find("Username").GetComponent<Text>().text = RankingHolder.Ranking.ElementAt(i).User.Username;
         }
     }
 }

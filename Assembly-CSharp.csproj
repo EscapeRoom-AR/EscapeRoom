@@ -179,7 +179,6 @@
     <Compile Include="Assets\Code\Scripts\UI\Ranking\GetRankingScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\PleaseDontScrollIntoInfinity.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\RoomID.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\SelectRoom.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\SettingsStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleSound.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleTutorial.cs" />

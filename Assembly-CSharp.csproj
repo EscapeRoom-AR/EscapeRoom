@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4190FBC9-CD5D-FA5A-360D-403CAE57297A}</ProjectGuid>
+    <ProjectGuid>{12B9DF75-516A-CB5B-A1D4-CFF36B113599}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -158,6 +158,7 @@
     <Compile Include="Assets\Code\Model\InteractiveItem.cs" />
     <Compile Include="Assets\Code\Model\Item.cs" />
     <Compile Include="Assets\Code\Model\ItemHint.cs" />
+    <Compile Include="Assets\Code\Model\RankingHolder.cs" />
     <Compile Include="Assets\Code\Model\Room.cs" />
     <Compile Include="Assets\Code\Model\User.cs" />
     <Compile Include="Assets\Code\Scripts\GameScene\Anims\TorchFire.cs" />
@@ -178,7 +179,6 @@
     <Compile Include="Assets\Code\Scripts\UI\Profile\ProfileStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\GetRankingScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\PleaseDontScrollIntoInfinity.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\Ranking\RoomID.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\SettingsStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleSound.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleTutorial.cs" />
@@ -209,19 +209,19 @@
     <None Include="Assets\StreamingAssets\Vuforia\Targets.xml" />
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -425,13 +425,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/vgarc/OneDrive/Escriptori/EscapeRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/alexc/Desktop/Scape/HelloDarkness/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -790,15 +790,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{0E5F6898-A873-BB9A-3D86-8324FBEB1155}</Project>
+      <Project>{E668C125-6587-755D-713A-2AB5F4A0CD3E}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{4C3A3F0E-F08E-AA71-78FB-20F5170A2409}</Project>
+      <Project>{B97BB2D3-2CFD-7FDF-9357-BBDB228735D6}</Project>
       <Name>VuforiaScripts</Name>
     </ProjectReference>
     <ProjectReference Include="VuforiaEditorScripts.csproj">
-      <Project>{A3AC33AE-F4D8-A840-98EE-B36CEC661C8E}</Project>
+      <Project>{BE6CE926-A8EE-14EA-D7DD-5A9A2F381283}</Project>
       <Name>VuforiaEditorScripts</Name>
     </ProjectReference>
   </ItemGroup>

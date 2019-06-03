@@ -17,7 +17,7 @@ public class PaperChairController : MonoBehaviour
 
     private void Start()
     {
-        papersPicked = 1;
+        papersPicked = 0;
         tag = "CHAIR";
         isModalShown = false;
     }

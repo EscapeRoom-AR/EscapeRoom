@@ -3,39 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TorchMouseDown : MonoBehaviour
+public class FinalClue : MonoBehaviour
 {
-    public Inventory inventory;
     private GameObject modal;
     private bool isModalShown;
     public GameObject modalPrefab;
     public Canvas canvas;
+    public Inventory inventory;
     public Sprite sprite;
-    public bool torchSolved;
-    public GameController gameController;
 
-    private void Start()
+    public void Start()
     {
-        torchSolved = false;
+        isModalShown = false;
     }
     private void OnMouseDown()
     {
-        if (!torchSolved && inventory.selectedItem != null)
-        {
-
-            if (inventory.selectedItem.Tag.Equals("FULLPAPER"))
-            {
-                inventory.RemoveItemsWithTag("FULLPAPER");
-                InteractiveItem item = new InteractiveItem(gameObject.GetComponent<Image>().sprite, "SECRETPAPER", () => ShowModal(sprite));
-                inventory.AddToInventory(item);
-                ShowModal(sprite);
-                torchSolved = true;
-                gameController.NextPhase();
-            }
-        }
+        inventory.AddToInventory(new InteractiveItem(sprite, "finalClue", () => ShowModal()));
+        gameObject.SetActive(false);
     }
 
-    private void ShowModal(Sprite sprite)
+
+    private void ShowModal()
     {
         if (isModalShown)
             return;
@@ -48,6 +36,4 @@ public class TorchMouseDown : MonoBehaviour
             isModalShown = false;
         });
     }
-
-
 }

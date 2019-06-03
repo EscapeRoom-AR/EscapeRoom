@@ -17,10 +17,13 @@ public class GameController : MonoBehaviour
     private Dictionary<int, List<string>> Hints;
     private bool AreHintsAvailable;
     public RESTService restService;
-
+    private bool PhaseHintShown;
+    private int HintsUsed;
 
     private void Start()
     {
+        PhaseHintShown = true;
+        HintsUsed = 0;
         Phase = 0;
         Countdown = 1800;
         AreHintsAvailable = false;
@@ -43,13 +46,12 @@ public class GameController : MonoBehaviour
     private void Update()
     {
          if (Countdown <= 0)
-            TimeUp();
-        /* else
-             CountDown();
-    */}
+            GameOver();
+    }
 
     public void NextPhase()
     {
+        PhaseHintShown = false;
         Phase++;
     }
 
@@ -70,16 +72,21 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void TimeUp()
+    public void GameOver()
     {
+        Data.HintsUsed = HintsUsed;
+        Data.Time = 1800 - Countdown;
         SceneManager.LoadScene("EndScene");
     }
 
     public string GetHint()
     {
-        if (AreHintsAvailable)
+        if (AreHintsAvailable) {
+            if (!PhaseHintShown) HintsUsed += 1;
+            PhaseHintShown = true;
             return Hints[Phase][new Random().Next(0, Hints[Phase].Count)];
-        else
-            return "Downloading hints...";
+        } else return "Downloading hints...";
     }
+
+
 }

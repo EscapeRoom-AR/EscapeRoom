@@ -31,6 +31,8 @@ public class GetRankingScript : MonoBehaviour
     private int _offset = 0;
     public Button NextButton;
     public Button PreviousButton;
+    private bool _loading = true;
+    public GameObject Background;
 
     // Start is called before the first frame update
     void Start()
@@ -41,25 +43,15 @@ public class GetRankingScript : MonoBehaviour
         GetRankings();
     }
 
-    private void Update()
-    {
-        //if (!_loading)
-        //{
-        //    Destroy(LoadingObject);
-        //}
-    }
-
     public void GetRankings()
     {
-        print("GET RANKINGS");
+        _loading = true;
+        Background.SetActive(_loading);
         rest.GetRanking(_roomCode, _offset, resp =>
           {
               if (resp.IsError())
                   modal.ShowModal(resp.message);
               else RankingHolder = resp.data;
-
-              print("Response");
-              print(JsonUtility.ToJson(RankingHolder));
 
               if (RankingHolder != null && RankingHolder.Ranking != null && RankingHolder.Ranking.Any())
                   SetValues();
@@ -68,7 +60,6 @@ public class GetRankingScript : MonoBehaviour
 
     public void SetValues()
     {
-        print("SetValues");
 
         if (RankingHolder.Count == 10)
         {
@@ -124,6 +115,8 @@ public class GetRankingScript : MonoBehaviour
             //userGameNumberComponent.text = "";
             //userGameScoreComponent.text = "";
         }
+        _loading = false;
+        Background.SetActive(_loading);
     }
 
     public void NextButtonClick()

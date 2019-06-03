@@ -15,6 +15,7 @@ public class InventoryButton : MonoBehaviour
 
     public void manageInventory()
     {
+        FXService.Instance.PlayClick();
         IsOpen = !IsOpen;
         inventory.SetActive(IsOpen);
     }

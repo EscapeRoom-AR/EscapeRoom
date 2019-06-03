@@ -6,6 +6,7 @@ public class ToggleSound : MonoBehaviour
 {
     public void OnValueChanged(bool value)
     {
+        FXService.Instance.PlayClick();
         PlayerPrefs.SetString("sound", value ? "on" : "off");
         if (value)
             AudioService.Instance.Play();

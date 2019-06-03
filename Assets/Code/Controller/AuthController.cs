@@ -37,6 +37,7 @@ public class AuthController : MonoBehaviour
     // Logs a user out.
     public void Logout()
     {
+        FXService.Instance.PlayClick();
         PlayerPrefs.DeleteKey("token");
         SceneManager.LoadScene("Login");
     }
@@ -44,6 +45,7 @@ public class AuthController : MonoBehaviour
     // Logs a user in.
     public void Login()
     {
+        FXService.Instance.PlayClick();
         if (usernameField.text == "" || passwordField.text == "")
             modalService.ShowModal("All fields are required");
         else if (passwordField.text.Length < 8)
@@ -55,6 +57,7 @@ public class AuthController : MonoBehaviour
     // Registers a new user and logs him in.
     public void Register()
     {
+        FXService.Instance.PlayClick();
         if (emailField.text == "" || usernameField.text == "" || passwordField.text == "" || passwordRepeatField.text == "")
             modalService.ShowModal("All fields are required");
         else if (!emailRegex.Match(emailField.text).Success)
@@ -70,9 +73,6 @@ public class AuthController : MonoBehaviour
     // Handles an APIResponse with a token.
     private void Authenticate(APIResponse<string> apiResponse)
     {
-        print(apiResponse.code);
-        print(apiResponse.message);
-
         if (apiResponse.IsError())
             modalService.ShowModal(apiResponse.message);
         else if (apiResponse.IsRegister())

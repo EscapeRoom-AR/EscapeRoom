@@ -16,6 +16,7 @@ public class ChangePasswordScript : MonoBehaviour
 
     public void ChangePassword()
     {
+        FXService.Instance.PlayClick();
         if (string.IsNullOrWhiteSpace(Password.text) || string.IsNullOrWhiteSpace(OldPassword.text) || string.IsNullOrWhiteSpace(PasswordRepeat.text))
         {
             modalService.ShowModal("All fields are required");

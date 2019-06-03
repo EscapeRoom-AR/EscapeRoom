@@ -31,6 +31,8 @@ public class EndSceneStart : MonoBehaviour
             Room = 1
         };
         // End MockGame
+        if (Data.Time < 1800)
+            FXService.Instance.PlaySuccess();
 
         UploadGame();
 

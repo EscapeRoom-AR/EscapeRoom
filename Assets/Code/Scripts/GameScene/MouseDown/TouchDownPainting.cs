@@ -18,7 +18,6 @@ public class TouchDownPainting : MonoBehaviour
 
     public void OnMouseDown()
     {
-        print("tapped number");
         OrderController.ItemTapped(new OrderController.OrderedItem(
           gameObject.tag,
           () => gameObject.transform.Find("Circle").gameObject.SetActive(true),
@@ -27,6 +26,7 @@ public class TouchDownPainting : MonoBehaviour
             ShowModal(sprite);
             inventory.AddToInventory(new InteractiveItem(sprite, "CHAIR", () => ShowModal(sprite)));
         }, () => {
+            FXService.Instance.PlaySuccess();
             inventory.RemoveItemsWithTag("CHAIR");
             inventory.AddToInventory(new InteractiveItem(joinedSprite, "JOINEDCHAIR", () => ShowModal(joinedSprite)));
             key.SetActive(true);

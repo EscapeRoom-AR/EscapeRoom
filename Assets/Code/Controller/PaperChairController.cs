@@ -38,6 +38,7 @@ public class PaperChairController : MonoBehaviour
     private void Complete()
     {
         inventory.RemoveItemsWithTag(tag);
+        FXService.Instance.PlaySuccess();
         InteractiveItem item = new InteractiveItem(allPapersSprite, "FULLCHAIR", () => ShowModal(allPapersSprite));
         inventory.AddToInventory(item);
         ShowModal(allPapersSprite);

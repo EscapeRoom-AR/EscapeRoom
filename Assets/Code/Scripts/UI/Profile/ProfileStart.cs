@@ -69,6 +69,7 @@ public class ProfileStart : MonoBehaviour
     {
         if (isModalActive)
             return;
+        FXService.Instance.PlayClick();
         isModalActive = true;
 
         GameObject modal = Instantiate(modalPickSourcePrefab, new Vector3(0, 0, 0), Quaternion.identity);
@@ -85,13 +86,11 @@ public class ProfileStart : MonoBehaviour
 
     public void Post()
     {
+        FXService.Instance.PlayClick();
         User user = new User();
         user.Description = descriptionField.text;
         user.Email = emailField.text;
         user.Username = usernameField.text;
-        print("Username: " + user.Username);
-        print("Email: " + user.Email);
-        modalService.ShowModal("Username: " + user.Username);
         restService.UpdateUser(user, apiResponse => {
             modalService.ShowModal(apiResponse.message);
         });

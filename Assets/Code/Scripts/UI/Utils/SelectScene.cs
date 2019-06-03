@@ -7,6 +7,7 @@ public class SelectScene : MonoBehaviour
 {
     public void changeScene(string scene)
     {
+        FXService.Instance.PlayClick();
         SceneManager.LoadScene(scene);
     }
 }

@@ -7,6 +7,7 @@ public class URL : MonoBehaviour
 
     public void OpenUrl(string url)
     {
+        FXService.Instance.PlayClick();
         Application.OpenURL(url);
     }
 }

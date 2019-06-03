@@ -21,6 +21,7 @@ public class HintButton : MonoBehaviour
     public void OnClick()
     {
         ShowModal();
+        FXService.Instance.PlayClick();
     }
 
     private void ShowModal()

@@ -6,39 +6,60 @@ public class OrderController : MonoBehaviour
 {
     public List<OrderedItem> items;
     private int amountOfSuccess;
+    private bool PaintingActive;
 
     private void Start()
     {
         items = new List<OrderedItem>();
         amountOfSuccess = 0;
+        PaintingActive = true;
     }
 
-    public void ItemTapped(OrderedItem item, Success success, Complete complete)
+    public void ItemTapped(OrderedItem item, Success success, Complete complete, bool isPainting)
     {
-        if (items.Contains(item)) { return; }
+        if (PaintingActive) {
+            if (!isPainting)
+            {
+                Clearitems();
+                PaintingActive = isPainting;
+            }
+                
+        } else {
+            if (isPainting)
+            {
+                Clearitems();
+                PaintingActive = isPainting;
+            }
+               
+        }
+
+        if (items.Contains(item)) return;
 
         items.Add(item);
 
-        if (items.Count == 3)
+        if (items.Count >= 3)
         {
             if (items[2].Tag == "third" && items[1].Tag == "second" && items[0].Tag == "first")
             {
-                success();
                 amountOfSuccess += 1;
-                if (amountOfSuccess == 2) complete();
-            }
-            else
-            {
-                for (int i = 0; i < items.Count; i++)
+                if (amountOfSuccess == 2)
                 {
-                    items[i].AutoRemove();
+                    Clearitems();
+                    complete();
                 }
-                items.Clear();
+                success();
             }
+            else Clearitems();
+        } else item.Display();
+    }
 
-        } else
-        
-        item.Display();
+    private void Clearitems()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            items[i].AutoRemove();
+        }
+        items.Clear();
     }
 
     public delegate void AutoRemove();

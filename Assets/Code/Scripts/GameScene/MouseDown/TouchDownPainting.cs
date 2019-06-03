@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TouchDownPainting : MonoBehaviour
 {
+    public bool isPainting;
     public OrderController OrderController;
     private GameObject modal;
     private bool isModalShown;
@@ -28,7 +29,7 @@ public class TouchDownPainting : MonoBehaviour
             inventory.RemoveItemsWithTag("CHAIR");
             inventory.AddToInventory(new InteractiveItem(joinedSprite, "JOINEDCHAIR", () => ShowModal(joinedSprite)));
             key.SetActive(true);
-        });
+        }, isPainting);
     }
 
     private void ShowModal(Sprite sprite)

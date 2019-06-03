@@ -11,6 +11,7 @@ public class KeyMouseDown : MonoBehaviour
     public Canvas canvas;
     public Inventory inventory;
     public Sprite sprite;
+    public GameObject finalClue;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class KeyMouseDown : MonoBehaviour
     {
         inventory.AddToInventory(new InteractiveItem(sprite, "KEY", () => ShowModal()));
         gameObject.SetActive(false);
+        finalClue.SetActive(true);
     }
 
     private void ShowModal()

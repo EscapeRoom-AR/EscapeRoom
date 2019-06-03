@@ -31,7 +31,6 @@ public class Inventory : MonoBehaviour
 
     public void ButtonTapped(int index)
     {
-        print("index:" + index);
         if (index < itemsInventory.Count)
         {
             selectedItem = itemsInventory[index];
@@ -46,13 +45,12 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItemsWithTag(string tag)
     {
-        for (int i = 0; i < itemsInventory.Count; i++)
-        {
-            if (itemsInventory[i].Tag.Equals(tag))
-            {
-                itemsInventory.Remove(itemsInventory[i]);
-            }
+        List<InteractiveItem> tmpList = new List<InteractiveItem>();
+        for (int i = 0; i < itemsInventory.Count; i++) {
+            if (!itemsInventory[i].Tag.Equals(tag))
+                tmpList.Add(itemsInventory[i]);
         }
+        itemsInventory = tmpList;
         UpdateUI();
     }
 

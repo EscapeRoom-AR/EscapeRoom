@@ -6,21 +6,34 @@ using UnityEngine.UI;
 
 public class HintButton : MonoBehaviour
 {
-    public ModalService ModalService;
     public GameController GameController;
-    private bool IsModalOpen;
+    private bool isModalShown;
+    private GameObject modal;
+    public GameObject modalPrefab;
+    public Canvas canvas;
+
 
     void Start()
     {
-        IsModalOpen = false;
+        isModalShown = false;
     }
 
     public void OnClick()
     {
-        if (!IsModalOpen)
-        {
-            ModalService.ShowModal(GameController.GetHint());
-        }
-            
+        ShowModal();
+    }
+
+    private void ShowModal()
+    {
+        if (isModalShown)
+            return;
+        isModalShown = true;
+        modal = Instantiate(modalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        modal.transform.SetParent(canvas.transform, false);
+        modal.transform.Find("ButtonHolder").Find("Button").GetComponent<Button>().onClick.AddListener(() => {
+            isModalShown = false;
+            Destroy(modal);
+        });
+        modal.transform.Find("Content").Find("Message").GetComponent<Text>().text = GameController.GetHint();
     }
 }

@@ -14,6 +14,7 @@ public class PaperChairController : MonoBehaviour
     public GameController gameController;
     public Sprite allPapersSprite;
     private bool isModalShown;
+    public GameObject finalClue;
 
     private void Start()
     {
@@ -27,9 +28,8 @@ public class PaperChairController : MonoBehaviour
         papersPicked += 1;
         Sprite sprite = gameObject.GetComponent<Image>().sprite;
         InteractiveItem item = new InteractiveItem(sprite, tag, () => ShowModal(sprite));
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         inventory.AddToInventory(item);
-        print("PapersPicked: " + papersPicked);
         if (papersPicked == 2) Complete();
 
 
@@ -41,6 +41,7 @@ public class PaperChairController : MonoBehaviour
         InteractiveItem item = new InteractiveItem(allPapersSprite, "FULLCHAIR", () => ShowModal(allPapersSprite));
         inventory.AddToInventory(item);
         ShowModal(allPapersSprite);
+        finalClue.SetActive(true);
         gameController.NextPhase();
     }
 

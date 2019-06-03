@@ -1,6 +1,4 @@
-﻿using Model;
-using Services;
-using System.Collections.Generic;
+﻿using Services;
 using System.Linq;
 using UnityEngine;
 
@@ -9,7 +7,21 @@ public class GetRankingScript : MonoBehaviour
     public RESTService rest;
     public ModalService modal;
     private int _roomCode = 1;
-    public IEnumerable<Game> rankings;
+    public RankingHolder RankingHolder;
+
+    // Components
+    public GameObject RankingList1;
+    public GameObject RankingList2;
+    public GameObject RankingList3;
+    public GameObject RankingList4;
+    public GameObject RankingList5;
+    public GameObject RankingList6;
+    public GameObject RankingList7;
+    public GameObject RankingList8;
+    public GameObject RankingList9;
+    public GameObject RankingList10;
+    // End Components
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +38,12 @@ public class GetRankingScript : MonoBehaviour
              print(resp.message); // remove
              if (resp.IsError())
                  modal.ShowModal(resp.message);
-             else rankings = resp.data;
+             else RankingHolder = resp.data;
 
-             if (rankings != null && rankings.Any())
-                 foreach (var ranking in rankings)
+             if (RankingHolder != null && RankingHolder.Ranking.Any())
+                 foreach (var ranking in RankingHolder.Ranking)
                  {
-                     print(ranking.Time);
+                     print(ranking.Score);
                  }
          });
     }

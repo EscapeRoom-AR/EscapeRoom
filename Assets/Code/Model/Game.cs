@@ -15,5 +15,6 @@ namespace Model
         public int Time { get; set; }
         public User User { get; set; }
         public int Room { get; set; }
+        public int Score { get; set; }
     }
 }

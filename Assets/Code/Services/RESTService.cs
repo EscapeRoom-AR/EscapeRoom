@@ -63,7 +63,7 @@ namespace Services
 
         public void ChangePassword(string oldPassword, string password, ResponseCallback<string> listener)
         {
-            StartCoroutine(Request(String.Format(PASSWORD, oldPassword, password), "PUT", listener));
+            StartCoroutine(Request(String.Format(PASSWORD, password, oldPassword), "PUT", listener));
         }
 
         public void DeleteAccount(string password, ResponseCallback<string> listener)
@@ -71,7 +71,7 @@ namespace Services
             StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
         }
 
-        public void GetRanking(int room, ResponseCallback<IEnumerable<Game>> listener)
+        public void GetRanking(int room, ResponseCallback<RankingHolder> listener)
         {
             StartCoroutine(Request(String.Format(RANKING, room), "GET", listener));
         }

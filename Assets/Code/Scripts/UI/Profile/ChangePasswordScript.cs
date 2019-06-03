@@ -1,5 +1,4 @@
 ﻿using Services;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +16,7 @@ public class ChangePasswordScript : MonoBehaviour
 
     public void ChangePassword()
     {
-        if (Password.text == null || !Password.text.Any() || OldPassword.text == null || !OldPassword.text.Any() || PasswordRepeat.text == null || !PasswordRepeat.text.Any())
+        if (string.IsNullOrWhiteSpace(Password.text) || string.IsNullOrWhiteSpace(OldPassword.text) || string.IsNullOrWhiteSpace(PasswordRepeat.text))
         {
             modalService.ShowModal("All fields are required");
             return;

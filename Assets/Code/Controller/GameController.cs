@@ -10,7 +10,8 @@ using Model;
 
 public class GameController : MonoBehaviour
 {
-    private Text countdownValue;
+    public Text countdownValue;
+
     private int Countdown;
     private int Phase;
     private Dictionary<int, List<string>> Hints;
@@ -36,15 +37,16 @@ public class GameController : MonoBehaviour
             AreHintsAvailable = true;
         });
         AudioService.Instance.Stop();
+        StartCoroutine(CountDown());
     }
 
     private void Update()
     {
-        /* if (Countdown <= 0)
-             timeUp();
-         else
-             CountDown();*/
-    }
+         if (Countdown <= 0)
+            TimeUp();
+        /* else
+             CountDown();
+    */}
 
     public void NextPhase()
     {
@@ -56,10 +58,16 @@ public class GameController : MonoBehaviour
         return Phase;
     }
 
-    public void CountDown()
+  public IEnumerator CountDown()
     {
-        Countdown--;
-        countdownValue.text = countdownValue.ToString();
+        while (Countdown > 0)
+        {
+            countdownValue.text = (Countdown / 60) + " : " + (Countdown % 60);
+            yield return new WaitForSeconds(1);
+            Countdown--;
+        }
+
+
     }
 
     public void TimeUp()

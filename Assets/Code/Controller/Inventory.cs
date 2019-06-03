@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour
         if (index < itemsInventory.Count)
         {
             selectedItem = itemsInventory[index];
-            print("tag:" + selectedItem.Tag);
             selectedItem.Callback();
             selectedItemImage.sprite = selectedItem.Sprite;
 

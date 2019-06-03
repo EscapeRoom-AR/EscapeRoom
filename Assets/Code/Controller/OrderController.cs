@@ -5,35 +5,38 @@ using UnityEngine;
 public class OrderController : MonoBehaviour
 {
     public List<OrderedItem> items;
+    private int amountOfSuccess;
 
     private void Start()
     {
         items = new List<OrderedItem>();
+        amountOfSuccess = 0;
     }
 
-    public void ItemTapped(OrderedItem item, Success success)
+    public void ItemTapped(OrderedItem item, Success success, Complete complete)
     {
-        if (items.Contains(item)) return;
+        if (items.Contains(item)) { return; }
 
         items.Add(item);
 
         if (items.Count == 3)
         {
-            print("1:" + items[0].Tag + "2:" + items[1].Tag + "3:" + item.Tag);
-            if (item.Tag == "third" && items[1].Tag == "second" && items[0].Tag == "first")
+            if (items[2].Tag == "third" && items[1].Tag == "second" && items[0].Tag == "first")
             {
                 success();
+                amountOfSuccess += 1;
+                if (amountOfSuccess == 2) complete();
             }
             else
             {
                 for (int i = 0; i < items.Count; i++)
                 {
-                    item.AutoRemove();
+                    items[i].AutoRemove();
                 }
                 items.Clear();
             }
 
-        }
+        } else
         
         item.Display();
     }
@@ -41,6 +44,7 @@ public class OrderController : MonoBehaviour
     public delegate void AutoRemove();
     public delegate void Display();
     public delegate void Success();
+    public delegate void Complete();
 
     public class OrderedItem
     {

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PedirCode : MonoBehaviour
+
+public class ClockInput : MonoBehaviour
 {
     GameObject window;
     public GameObject modalPrefab;
     public Canvas canvas;
-    public Animator animator;
     private bool isModalShown = false;
+    public AudioSource audioPlayer;
 
     public void OnMouseDown()
     {
@@ -16,19 +17,19 @@ public class PedirCode : MonoBehaviour
         isModalShown = true;
         window = Instantiate(modalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         window.transform.SetParent(canvas.transform, false);
-        Button button1= window.transform.Find("Button1").GetComponent<Button>();
+        Button button1 = window.transform.Find("Button").GetComponent<Button>();
         button1.onClick.AddListener(() => closeWindow());
     }
 
     public void closeWindow()
     {
 
-        InputField field1 = window.transform.Find("Input1").GetComponent<InputField>();
-        string palabraSecreta=field1.text;
-     
-        if (palabraSecreta.ToLower().Equals("candle") || palabraSecreta.ToLower().Equals("torch"))
+        InputField minuteField = window.transform.Find("MinuteField").GetComponent<InputField>();
+        InputField horaField = window.transform.Find("HourField").GetComponent<InputField>();
+
+        if (horaField.text.ToLower().Equals("10") && minuteField.text.ToLower().Equals("45"))
         {
-            animator.SetTrigger("subirTrigger");
+            audioPlayer.Play();
         }
         Destroy(window);
         isModalShown = false;

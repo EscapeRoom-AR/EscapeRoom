@@ -12,20 +12,26 @@ public class TouchDownPainting : MonoBehaviour
     public Canvas canvas;
     public Sprite sprite;
     public Inventory inventory;
+    public Sprite joinedSprite;
+    public GameObject key;
 
     public void OnMouseDown()
     {
         OrderController.ItemTapped(new OrderController.OrderedItem(
           gameObject.tag,
           () => gameObject.transform.Find("Circle").gameObject.SetActive(true),
-          () => gameObject.transform.Find("Circle").gameObject.SetActive(false)
-        ), () => {
-            ShowModal();
-            inventory.AddToInventory(new InteractiveItem(sprite, "CHAIR", () => ShowModal()));
+          () => gameObject.transform.Find("Circle").gameObject.SetActive(false)),
+          () => {
+            ShowModal(sprite);
+            inventory.AddToInventory(new InteractiveItem(sprite, "CHAIR", () => ShowModal(sprite)));
+        }, () => {
+            inventory.RemoveItemsWithTag("CHAIR");
+            inventory.AddToInventory(new InteractiveItem(joinedSprite, "JOINEDCHAIR", () => ShowModal(joinedSprite)));
+            key.SetActive(true);
         });
     }
 
-    private void ShowModal()
+    private void ShowModal(Sprite sprite)
     {
         if (isModalShown)
             return;

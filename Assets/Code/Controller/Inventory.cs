@@ -33,10 +33,10 @@ public class Inventory : MonoBehaviour
     {
         if (index < itemsInventory.Count)
         {
+            FXService.Instance.PlayClick();
             selectedItem = itemsInventory[index];
             selectedItem.Callback();
             selectedItemImage.sprite = selectedItem.Sprite;
-
         }
 
     }
@@ -57,11 +57,15 @@ public class Inventory : MonoBehaviour
     public void AddToInventory(InteractiveItem item)
     {
         itemsInventory.Add(item);
+        selectedItem = item;
+        FXService.Instance.PlaySaveItem();
         UpdateUI();
     }
 
     public void removeFromInventory(InteractiveItem item)
     {
+        if (selectedItem.Equals(item))
+            selectedItem = null;
         itemsInventory.Remove(item);
         UpdateUI();
     }

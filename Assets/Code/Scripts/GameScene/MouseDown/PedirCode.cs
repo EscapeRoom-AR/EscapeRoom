@@ -29,6 +29,7 @@ public class PedirCode : MonoBehaviour
      
         if (palabraSecreta.ToLower().Equals("candle") || palabraSecreta.ToLower().Equals("torch"))
         {
+            FXService.Instance.PlayOpenDoor();
             animator.SetTrigger("subirTrigger");
             gameController.GameOver();
         }

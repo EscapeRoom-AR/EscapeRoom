@@ -14,6 +14,7 @@ public class DeleteAccountScript : MonoBehaviour
     {
         rest.DeleteAccount(Password.text, resp =>
         {
+            FXService.Instance.PlayClick();
             if (resp.IsError())
                 modalService.ShowModal(resp.message);
             else ChangeScene();

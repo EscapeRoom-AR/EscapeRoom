@@ -36,6 +36,7 @@ public class PaperHintController : MonoBehaviour
 
     private void Complete()
     {
+        FXService.Instance.PlaySuccess();
         inventory.RemoveItemsWithTag(tag);
         InteractiveItem item = new InteractiveItem(gameObject.GetComponent<Image>().sprite, "FULLPAPER", () => ShowModal(allPapersSprite));
         inventory.AddToInventory(item);

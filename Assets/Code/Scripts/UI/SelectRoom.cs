@@ -8,7 +8,8 @@ public class SelectRoom : MonoBehaviour
     
     public void OnClick()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString("tutorial").Equals("on") ? "Tutorial" : "ScapeRoomScene");
+        FXService.Instance.PlayClick();
+        SceneManager.LoadScene(PlayerPrefs.GetString("tutorial").Equals("on") ? "Tutorial" : "IntroGame");
     }
 
 

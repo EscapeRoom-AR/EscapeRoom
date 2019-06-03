@@ -16,12 +16,10 @@ public class OpenTreasure : MonoBehaviour
     public void OnMouseDown()
     {
         if (!isopen && inventory.selectedItem != null && inventory.selectedItem.Tag.Equals("KEY")) {
+            FXService.Instance.PlayOpenChest();
             chest.GetComponent<Animation>().Play("ChestAnim");
             gameController.NextPhase();
             isopen = true;
-        } else if (inventory.selectedItem != null)
-        {
-            print("TAG: " + inventory.selectedItem.Tag);
         }
         
     }

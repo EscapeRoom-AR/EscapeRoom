@@ -9,6 +9,8 @@ namespace Model
         public int Count;
         public Game[] Ranking;
         public Game UserGame;
+        public int Offset;
+        public int NumberUser;
     }
 }
 

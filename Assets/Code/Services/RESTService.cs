@@ -29,7 +29,7 @@ namespace Services
         private static readonly string ROOMS = HOST + "/room";
         private static readonly string ROOM = HOST + "/room";
         private static readonly string PHOTO = "http://alexraspberry.ddns.net:8080/post.php";
-        private static readonly string RANKING = HOST + "/paginated-ranking?room={0}";
+        private static readonly string RANKING = HOST + "/paginated-ranking?room={0}&offset={1}";
         private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
         private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
         private static readonly string HINTS = HOST + "/hints/{0}";
@@ -71,9 +71,9 @@ namespace Services
             StartCoroutine(Request(String.Format(DELETE_ACCOUNT, password), "DELETE", listener));
         }
 
-        public void GetRanking(int room, ResponseCallback<RankingHolder> listener)
+        public void GetRanking(int room,int offset, ResponseCallback<RankingHolder> listener)
         {
-            StartCoroutine(Request(String.Format(RANKING, room), "GET", listener));
+            StartCoroutine(Request(String.Format(RANKING, room,offset), "GET", listener));
         }
 
         public void UpdateUserImage(string photoUrl, ResponseCallback<User> listener)

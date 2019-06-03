@@ -25,8 +25,12 @@ public class GetRankingScript : MonoBehaviour
     public GameObject RankingList9;
     public GameObject RankingListUser;
     // End Components
+    // User
     private IEnumerable<GameObject> _rankingListsArray;
-
+    // Pagination
+    private int _offset = 0;
+    public Button NextButton;
+    public Button PreviousButton;
 
     // Start is called before the first frame update
     void Start()
@@ -37,38 +41,100 @@ public class GetRankingScript : MonoBehaviour
         GetRankings();
     }
 
+    private void Update()
+    {
+        //if (!_loading)
+        //{
+        //    Destroy(LoadingObject);
+        //}
+    }
+
     public void GetRankings()
     {
         print("GET RANKINGS");
-        rest.GetRanking(_roomCode, resp =>
-         {
-             if (resp.IsError())
-                 modal.ShowModal(resp.message);
-             else RankingHolder = resp.data;
+        rest.GetRanking(_roomCode, _offset, resp =>
+          {
+              if (resp.IsError())
+                  modal.ShowModal(resp.message);
+              else RankingHolder = resp.data;
 
-             print("Response");
-             print(JsonUtility.ToJson(RankingHolder));
+              print("Response");
+              print(JsonUtility.ToJson(RankingHolder));
 
-             if (RankingHolder != null && RankingHolder.Ranking != null && RankingHolder.Ranking.Any())
-                 SetValues();
-         });
+              if (RankingHolder != null && RankingHolder.Ranking != null && RankingHolder.Ranking.Any())
+                  SetValues();
+          });
     }
 
     public void SetValues()
     {
         print("SetValues");
-        print(JsonUtility.ToJson(RankingHolder));
-        for (int i = RankingHolder.Count - 1; i < _rankingListsArray.Count(); i++)
+
+        if (RankingHolder.Count == 10)
+        {
+            NextButton.interactable = true;
+        }
+        else NextButton.interactable = false;
+
+        if (_offset <= 0)
+        {
+            PreviousButton.interactable = false;
+        }
+        else PreviousButton.interactable = true;
+
+
+        for (int i = RankingHolder.Count; i < _rankingListsArray.Count(); i++)
         {
             var list = _rankingListsArray.ElementAt(i);
-            Destroy(list);
-            //_rankingListsArray.Remove();
+            list.SetActive(false);
         }
 
-        for (int i = 0; i > RankingHolder.Count; i++)
+        for (int i = 0; i < RankingHolder.Count; i++)
         {
             var list = _rankingListsArray.ElementAt(i);
-            list.transform.Find("Username").GetComponent<Text>().text = RankingHolder.Ranking.ElementAt(i).User.Username;
+            list.SetActive(true);
+            var user = RankingHolder.Ranking.ElementAt(i).User;
+            var username = user.Username;
+            var score = RankingHolder.Ranking.ElementAt(i).Score;
+            var number = RankingHolder.Offset + i + 1;
+
+            list.transform.Find("Username").GetComponent<Text>().text = username;
+            list.transform.Find("Number").GetComponent<Text>().text = number.ToString();
+            list.transform.Find("Score").GetComponent<Text>().text = score.ToString();
+            var image = list.transform.Find("UserImage").Find("Mask").Find("Icon").GetComponent<Image>();
+            var imagePath = user.Image;
+            if (!string.IsNullOrWhiteSpace(imagePath))
+                rest.GetImage(imagePath, sprite => image.sprite = sprite);
         }
+
+        var userGameUsernameComponent = RankingListUser.transform.Find("Username").GetComponent<Text>();
+        var userGameNumberComponent = RankingListUser.transform.Find("Number").GetComponent<Text>();
+        var userGameScoreComponent = RankingListUser.transform.Find("Score").GetComponent<Text>();
+
+        if (RankingHolder.UserGame != null && RankingHolder.UserGame.Code != 0)
+        {
+            userGameUsernameComponent.text = RankingHolder.UserGame.User.Username;
+            userGameNumberComponent.text = RankingHolder.NumberUser.ToString();
+            userGameScoreComponent.text = RankingHolder.UserGame.Score.ToString();
+        }
+        else
+        {
+            Destroy(RankingListUser);
+            //userGameUsernameComponent.text = "No records of you";
+            //userGameNumberComponent.text = "";
+            //userGameScoreComponent.text = "";
+        }
+    }
+
+    public void NextButtonClick()
+    {
+        _offset += RankingHolder.Count;
+        GetRankings();
+    }
+
+    public void PreviousButtonClick()
+    {
+        _offset -= RankingHolder.Count;
+        GetRankings();
     }
 }

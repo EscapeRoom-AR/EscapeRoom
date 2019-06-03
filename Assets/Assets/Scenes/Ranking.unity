@@ -4459,6 +4459,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rest: {fileID: 1906478442}
   modal: {fileID: 1906478443}
+  RankingList: {fileID: 8430665485722465921}
+  RankingList1: {fileID: 7709282497773976928}
+  RankingList2: {fileID: 3669059012865787045}
+  RankingList3: {fileID: 1370771614027450337}
+  RankingList4: {fileID: 3450425564742340973}
+  RankingList5: {fileID: 1658134334}
+  RankingList6: {fileID: 365239604}
+  RankingList7: {fileID: 346827216}
+  RankingList8: {fileID: 2051112965}
+  RankingList9: {fileID: 2088519983}
+  RankingListUser: {fileID: 3070162188703263017}
 --- !u!4 &1906478445
 Transform:
   m_ObjectHideFlags: 0

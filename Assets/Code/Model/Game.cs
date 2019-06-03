@@ -8,13 +8,13 @@ namespace Model
     [Serializable]
     public class Game
     {
-        public DateTime CreatedAt { get; set; }
-        public DateTime DeletedAt { get; set; }
-        public int Code { get; set; }
-        public int HintsUsed { get; set; }
-        public int Time { get; set; }
-        public User User { get; set; }
-        public int Room { get; set; }
-        public int Score { get; set; }
+        public DateTime CreatedAt;
+        public DateTime DeletedAt;
+        public int Code;
+        public int HintsUsed;
+        public int Time;
+        public User User;
+        public int Room;
+        public int Score;
     }
 }

@@ -24,5 +24,10 @@ namespace Model
         {
             return code == 0;
         }
+
+        public bool IsRegister()
+        {
+            return code == 2;
+        }
     }
 }

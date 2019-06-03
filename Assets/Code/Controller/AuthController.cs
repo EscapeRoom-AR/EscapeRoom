@@ -4,6 +4,7 @@ using Services;
 using UnityEngine.SceneManagement;
 using Model;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 public class AuthController : MonoBehaviour
 {
@@ -14,6 +15,18 @@ public class AuthController : MonoBehaviour
     public InputField passwordRepeatField;
     public InputField emailField;
     private Regex emailRegex = new Regex(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$");
+
+
+    private void Start()
+    {
+        // Checking if the user has just registered himself
+        if (Data.ActivationMessage != null && Data.ActivationMessage.Any())
+        {
+            modalService.ShowModal(Data.ActivationMessage);
+            Data.ActivationMessage = null;
+        }
+    }
+
 
     // Checks whether a user is logged in.
     public bool IsAuthenticated()
@@ -35,7 +48,7 @@ public class AuthController : MonoBehaviour
             modalService.ShowModal("All fields are required");
         else if (passwordField.text.Length < 8)
             modalService.ShowModal("Password must be at least 8 characters long");
-        else 
+        else
             restService.Login(new User(usernameField.text, passwordField.text), apiResponse => Authenticate(apiResponse));
     }
 
@@ -57,9 +70,18 @@ public class AuthController : MonoBehaviour
     // Handles an APIResponse with a token.
     private void Authenticate(APIResponse<string> apiResponse)
     {
+        print(apiResponse.code);
+        print(apiResponse.message);
+
         if (apiResponse.IsError())
             modalService.ShowModal(apiResponse.message);
-        else {
+        else if (apiResponse.IsRegister())
+        {
+            Data.ActivationMessage = apiResponse.message;
+            SceneManager.LoadScene("Login");
+        }
+        else
+        {
             PlayerPrefs.SetString("token", apiResponse.data);
             SceneManager.LoadScene("Main");
         }

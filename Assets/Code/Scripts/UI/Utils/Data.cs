@@ -7,7 +7,7 @@ public static class Data
 
     // End Scene
     public static bool Win { get; set; } = true;
-    public static int Score { get; set; } = 300; // time
+    public static int Time { get; set; } = 300; // time
     public static int RoomCode { get; set; }
     public static int HintsUsed { get; set; }
 

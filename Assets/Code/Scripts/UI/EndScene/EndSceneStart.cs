@@ -35,7 +35,7 @@ public class EndSceneStart : MonoBehaviour
         UploadGame();
 
         Title.text = Data.Win ? "Congratulations!" : "Time's up!";
-        Score.text = "You scored " + Data.Score + " points!";
+        Score.text = "You scored " + Data.Time + " points!";
     }
 
     public void UploadGame()

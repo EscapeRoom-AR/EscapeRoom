@@ -8,6 +8,7 @@ public class PedirCode : MonoBehaviour
     public GameObject modalPrefab;
     public Canvas canvas;
     public Animator animator;
+    public GameController gameController;
     private bool isModalShown = false;
 
     public void OnMouseDown()
@@ -29,6 +30,7 @@ public class PedirCode : MonoBehaviour
         if (palabraSecreta.ToLower().Equals("candle") || palabraSecreta.ToLower().Equals("torch"))
         {
             animator.SetTrigger("subirTrigger");
+            gameController.GameOver();
         }
         Destroy(window);
         isModalShown = false;

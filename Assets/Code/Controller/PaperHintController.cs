@@ -17,7 +17,7 @@ public class PaperHintController : MonoBehaviour
 
     private void Start()
     {
-        papersPicked = 3;
+        papersPicked = 0;
         tag = "paper";
         isModalShown = false;
     }

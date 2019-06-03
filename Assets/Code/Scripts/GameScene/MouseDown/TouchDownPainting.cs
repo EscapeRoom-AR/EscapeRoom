@@ -18,6 +18,7 @@ public class TouchDownPainting : MonoBehaviour
 
     public void OnMouseDown()
     {
+        print("tapped number");
         OrderController.ItemTapped(new OrderController.OrderedItem(
           gameObject.tag,
           () => gameObject.transform.Find("Circle").gameObject.SetActive(true),

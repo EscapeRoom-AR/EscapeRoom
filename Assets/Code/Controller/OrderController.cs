@@ -17,6 +17,7 @@ public class OrderController : MonoBehaviour
 
     public void ItemTapped(OrderedItem item, Success success, Complete complete, bool isPainting)
     {
+        print(item.Tag);
         if (PaintingActive) {
             if (!isPainting)
             {
@@ -36,7 +37,7 @@ public class OrderController : MonoBehaviour
         if (items.Contains(item)) return;
 
         items.Add(item);
-
+        
         if (items.Count >= 3)
         {
             if (items[2].Tag == "third" && items[1].Tag == "second" && items[0].Tag == "first")

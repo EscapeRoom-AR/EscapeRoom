@@ -158,6 +158,7 @@
     <Compile Include="Assets\Code\Model\InteractiveItem.cs" />
     <Compile Include="Assets\Code\Model\Item.cs" />
     <Compile Include="Assets\Code\Model\ItemHint.cs" />
+    <Compile Include="Assets\Code\Model\RankingHolder.cs" />
     <Compile Include="Assets\Code\Model\Room.cs" />
     <Compile Include="Assets\Code\Model\User.cs" />
     <Compile Include="Assets\Code\Scripts\GameScene\Anims\TorchFire.cs" />
@@ -178,7 +179,7 @@
     <Compile Include="Assets\Code\Scripts\UI\Profile\ProfileStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\GetRankingScript.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Ranking\PleaseDontScrollIntoInfinity.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\Ranking\RoomID.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\SelectRoom.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\SettingsStart.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleSound.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Settings\ToggleTutorial.cs" />

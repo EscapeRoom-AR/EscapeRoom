@@ -28,12 +28,14 @@ public class HintButton : MonoBehaviour
         if (isModalShown)
             return;
         isModalShown = true;
+
         modal = Instantiate(modalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        modal.transform.Find("Content").Find("Message").GetComponent<Text>().text = GameController.GetHint();
         modal.transform.SetParent(canvas.transform, false);
         modal.transform.Find("ButtonHolder").Find("Button").GetComponent<Button>().onClick.AddListener(() => {
             isModalShown = false;
             Destroy(modal);
         });
-        modal.transform.Find("Content").Find("Message").GetComponent<Text>().text = GameController.GetHint();
+        
     }
 }

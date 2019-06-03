@@ -20,19 +20,21 @@ namespace Services
         public delegate void ImageCallBack(Sprite sprite);
 
         // Endpoints of the webservice.
-        private static string HOST = "http://stucom.flx.cat/alu/dam2t02";
-        private static string LOGIN = HOST + "/login?username={0}&password={1}";
-        private static string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
-        private static string USER = HOST + "/user";
-        private static string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
-        private static string UPDATE_USER_PHOTO = USER + "?photo={0}";
-        private static string ROOMS = HOST + "/room";
-        private static string ROOM = HOST + "/room";
-        private static string PHOTO = "http://alexraspberry.ddns.net:8080/post.php";
+        private static readonly string HOST = "http://stucom.flx.cat/alu/dam2t02";
+        private static readonly string LOGIN = HOST + "/login?username={0}&password={1}";
+        private static readonly string REGISTER = HOST + "/register?username={0}&email={1}&password={2}";
+        private static readonly string USER = HOST + "/user";
+        private static readonly string UPDATE_USER = USER + "?username={0}&email={1}&description={2}";
+        private static readonly string UPDATE_USER_PHOTO = USER + "?photo={0}";
+        private static readonly string ROOMS = HOST + "/room";
+        private static readonly string ROOM = HOST + "/room";
+        private static readonly string PHOTO = "http://alexraspberry.ddns.net:8080/post.php";
         private static readonly string RANKING = HOST + "/paginated-ranking?room={0}";
         private static readonly string PASSWORD = HOST + "/password?password={0}&password-old={1}";
         private static readonly string DELETE_ACCOUNT = HOST + "/user?password={0}";
+        private static readonly string HINTS = HOST + "/hints/{0}";
         private static readonly string GAME = HOST + "/game?hints={0}&time={1}&room={2}";
+
 
         public void Login(User user,ResponseCallback<string> listener)
         {
@@ -89,6 +91,11 @@ namespace Services
             StartCoroutine(Request(String.Format(GAME, game.HintsUsed, game.Time, game.Room),"POST",listener));
         }
 
+        public void GetHints(int roomId, ResponseCallback<List<GameHint>> listener)
+        {
+            StartCoroutine(Request(String.Format(HINTS, roomId), "GET", listener));
+        }
+
         // Downloads a sprite given a url.
         IEnumerator ImageCoroutine(string url, ImageCallBack callback)
         {
@@ -108,6 +115,7 @@ namespace Services
             //www.SetRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.NzY.7FWNYxsywRKDcWgyLsQ3QSbFyBTaZ0JIB3dZ1eyIflM");
             yield return www.SendWebRequest();
             APIResponse<T> apiResponse;
+            print(www.downloadHandler.text);
             if (www.isNetworkError || www.isHttpError)
                 apiResponse = new APIResponse<T>(0, www.error);
             else

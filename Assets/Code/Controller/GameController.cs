@@ -1,19 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using Random = System.Random;
+using Services;
+using Model;
 
 public class GameController : MonoBehaviour
 {
     private Text countdownValue;
     private int Countdown;
-    private int Status;
+    private int Phase;
+    private Dictionary<int, List<string>> Hints;
+    private bool AreHintsAvailable;
+    public RESTService restService;
+
 
     private void Start()
     {
-        Status = 0;
+        Phase = 0;
         Countdown = 1800;
+        AreHintsAvailable = false;
+        Hints = new Dictionary<int, List<string>>();
+        restService.GetHints(1, apiResponse => {
+            List<GameHint> hints = apiResponse.data;
+            for (int i = 0; i < hints.Count; i++)
+            {
+                if (!Hints.ContainsKey(hints[i].Phase))
+                    Hints[hints[i].Phase] = new List<string>();
+                Hints[hints[i].Phase].Add(hints[i].Hint);
+                print(hints[i].Hint);
+            }
+            AreHintsAvailable = true;
+        });
+        AudioService.Instance.Stop();
     }
 
     private void Update()
@@ -26,12 +48,12 @@ public class GameController : MonoBehaviour
 
     public void NextPhase()
     {
-        Status++;
+        Phase++;
     }
 
-    public int GetStatus()
+    public int GetPhase()
     {
-        return Status;
+        return Phase;
     }
 
     public void CountDown()
@@ -40,8 +62,16 @@ public class GameController : MonoBehaviour
         countdownValue.text = countdownValue.ToString();
     }
 
-    public void timeUp()
+    public void TimeUp()
     {
         SceneManager.LoadScene("EndScene");
+    }
+
+    public string GetHint()
+    {
+        if (AreHintsAvailable)
+            return Hints[Phase][new Random().Next(0, Hints[Phase].Count)];
+        else
+            return "Downloading hints...";
     }
 }

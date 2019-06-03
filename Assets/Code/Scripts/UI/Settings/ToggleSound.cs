@@ -7,5 +7,9 @@ public class ToggleSound : MonoBehaviour
     public void OnValueChanged(bool value)
     {
         PlayerPrefs.SetString("sound", value ? "on" : "off");
+        if (value)
+            AudioService.Instance.Play();
+        else
+            AudioService.Instance.Stop();
     }
 }

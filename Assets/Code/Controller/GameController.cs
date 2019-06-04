@@ -11,7 +11,7 @@ using Model;
 public class GameController : MonoBehaviour
 {
     public Text countdownValue;
-
+    private bool loggedIn;
     private int Countdown;
     private int Phase;
     private Dictionary<int, List<string>> Hints;
@@ -27,7 +27,9 @@ public class GameController : MonoBehaviour
         Phase = 0;
         Countdown = 1800;
         AreHintsAvailable = false;
+        loggedIn = PlayerPrefs.GetString("token") != "";
         Hints = new Dictionary<int, List<string>>();
+
         restService.GetHints(1, apiResponse => {
             List<GameHint> hints = apiResponse.data;
             for (int i = 0; i < hints.Count; i++)
@@ -37,7 +39,6 @@ public class GameController : MonoBehaviour
                 Hints[hints[i].Phase].Add(hints[i].Hint);
                 print(hints[i].Hint);
             }
-            AreHintsAvailable = true;
         });
         AudioService.Instance.Stop();
         StartCoroutine(CountDown());
@@ -68,8 +69,6 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(1);
             Countdown--;
         }
-
-
     }
 
     public void GameOver()
@@ -81,11 +80,14 @@ public class GameController : MonoBehaviour
 
     public string GetHint()
     {
-        if (AreHintsAvailable) {
+        if (!loggedIn)
+        {
+            return "You must be logged in to use hints";
+        } else if (AreHintsAvailable) {
             if (!PhaseHintShown) HintsUsed += 1;
             PhaseHintShown = true;
             return Hints[Phase][new Random().Next(0, Hints[Phase].Count)];
-        } else return "Downloading hints...";
+        } else return "Hints are being downloaded, try again later";
     }
 
 

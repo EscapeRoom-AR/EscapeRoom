@@ -33,13 +33,14 @@ public class GetRankingScript : MonoBehaviour
     public Button PreviousButton;
     private bool _loading = true;
     public GameObject Background;
+    private bool isLoggedIn;
 
     // Start is called before the first frame update
     void Start()
     {
         _rankingListsArray = new GameObject[] { RankingList, RankingList1, RankingList2, RankingList3, RankingList4,
             RankingList5, RankingList6, RankingList7, RankingList8, RankingList9 };
-
+        isLoggedIn = false;
         GetRankings();
     }
 
@@ -47,15 +48,25 @@ public class GetRankingScript : MonoBehaviour
     {
         _loading = true;
         Background.SetActive(_loading);
-        rest.GetRanking(_roomCode, _offset, resp =>
-          {
-              if (resp.IsError())
-                  modal.ShowModal(resp.message);
-              else RankingHolder = resp.data;
+        if (PlayerPrefs.GetString("token") == "")
+        {
+            modal.ShowModal("Log in to see the ranking!");
+        }
+            
+        else
+            rest.GetRanking(_roomCode, _offset, resp =>
+              {
+                  if (resp.IsError())
+                      modal.ShowModal(resp.message);
+                  else RankingHolder = resp.data;
 
-              if (RankingHolder != null && RankingHolder.Ranking != null && RankingHolder.Ranking.Any())
-                  SetValues();
-          });
+                  if (RankingHolder != null && RankingHolder.Ranking != null && RankingHolder.Ranking.Any())
+                  {
+                      SetValues();
+                      isLoggedIn = true;
+                  }
+                      
+            });
     }
 
     public void SetValues()
@@ -121,13 +132,21 @@ public class GetRankingScript : MonoBehaviour
 
     public void NextButtonClick()
     {
-        _offset += RankingHolder.Count;
-        GetRankings();
+        if (isLoggedIn)
+        {
+            _offset += RankingHolder.Count;
+            GetRankings();
+        }
+
     }
 
     public void PreviousButtonClick()
     {
-        _offset -= RankingHolder.Count;
-        GetRankings();
+        if (isLoggedIn)
+        {
+            _offset -= RankingHolder.Count;
+            GetRankings();
+        }
+
     }
 }

@@ -139,11 +139,6 @@
     <Compile Include="Assets\Assets\UI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\Assets\UI\Scripts\UI\UIWindow.cs" />
     <Compile Include="Assets\Assets\UI\Scripts\UI\UIWindowManager.cs" />
-    <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Examples\Example 1 (macOS Finder)\Scripts\FileSelected.cs" />
-    <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Examples\Example 2 (Slot Machine)\Scripts\SlotMachine.cs" />
-    <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Examples\Example 3 (Pinned Map)\Scripts\SimpleZoom.cs" />
-    <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Examples\Example 4 (Dynamic Content)\Scripts\DynamicContentController.cs" />
-    <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Examples\Shared Resources\Scripts\ExpandInformation.cs" />
     <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Scripts\Runtime\SimpleScrollSnap.cs" />
     <Compile Include="Assets\Assets\UI\Simple Scroll-Snap\Scripts\Runtime\TransitionEffect.cs" />
     <Compile Include="Assets\Code\Controller\AuthController.cs" />
@@ -187,7 +182,9 @@
     <Compile Include="Assets\Code\Scripts\UI\Utils\Data.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Utils\SelectScene.cs" />
     <Compile Include="Assets\Code\Scripts\UI\Utils\URL.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\VideoHandler.cs" />
     <Compile Include="Assets\Code\Services\AudioService.cs" />
+    <Compile Include="Assets\Code\Services\FXService.cs" />
     <Compile Include="Assets\Code\Services\ModalService.cs" />
     <Compile Include="Assets\Code\Services\RESTService.cs" />
     <Compile Include="Assets\Vuforia\UDT\UDTEventHandler.cs" />
